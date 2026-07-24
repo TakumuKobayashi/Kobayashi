@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 3b4a71eb6d63e06499cfbabbe664c9f2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6391109647249165663
+    second: gauge_ring-segmented_blue-gold_02_512_0
+  - first:
+      213: 4867307856061130858
+    second: gauge_ring-segmented_blue-gold_02_512_1
+  - first:
+      213: -8122192721265105710
+    second: gauge_ring-segmented_blue-gold_02_512_2
+  - first:
+      213: 3990551659692419683
+    second: gauge_ring-segmented_blue-gold_02_512_3
+  - first:
+      213: 4603681304768136286
+    second: gauge_ring-segmented_blue-gold_02_512_4
+  - first:
+      213: -8400473801361682445
+    second: gauge_ring-segmented_blue-gold_02_512_5
+  - first:
+      213: 5410207716154285285
+    second: gauge_ring-segmented_blue-gold_02_512_6
+  - first:
+      213: 8154006340419703186
+    second: gauge_ring-segmented_blue-gold_02_512_7
+  - first:
+      213: 8289635829578750169
+    second: gauge_ring-segmented_blue-gold_02_512_8
+  - first:
+      213: 6890164936618057088
+    second: gauge_ring-segmented_blue-gold_02_512_9
+  - first:
+      213: 3298065665695305247
+    second: gauge_ring-segmented_blue-gold_02_512_10
+  - first:
+      213: -2989489507583193134
+    second: gauge_ring-segmented_blue-gold_02_512_11
+  - first:
+      213: 3554678028140917267
+    second: gauge_ring-segmented_blue-gold_02_512_12
+  - first:
+      213: 769780074109459748
+    second: gauge_ring-segmented_blue-gold_02_512_13
+  - first:
+      213: 620491986673099510
+    second: gauge_ring-segmented_blue-gold_02_512_14
+  - first:
+      213: 2565957031347518536
+    second: gauge_ring-segmented_blue-gold_02_512_15
+  - first:
+      213: 8843580250194600970
+    second: gauge_ring-segmented_blue-gold_02_512_16
+  - first:
+      213: -8561379530210152363
+    second: gauge_ring-segmented_blue-gold_02_512_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_0
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 398
+        width: 67
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5dcbd4dc58c1b850800000000000000
+      internalID: 6391109647249165663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_1
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 427
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a68edfcf4b62c8340800000000000000
+      internalID: 4867307856061130858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_2
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 427
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4eab3d0cc284f80800000000000000
+      internalID: -8122192721265105710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_3
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 398
+        width: 67
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36aefc57799416730800000000000000
+      internalID: 3990551659692419683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 295
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e54cfcd51cf83ef30800000000000000
+      internalID: 4603681304768136286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_5
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 353
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ff8cd4d5958b6b80800000000000000
+      internalID: -8400473801361682445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_6
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 353
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ec147ad04be41b40800000000000000
+      internalID: 5410207716154285285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_7
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 295
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 291dff89099d82170800000000000000
+      internalID: 8154006340419703186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_8
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 227
+        width: 48
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d8546bddd3ba0370800000000000000
+      internalID: 8289635829578750169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_9
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 227
+        width: 48
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08d98f21188ce9f50800000000000000
+      internalID: 6890164936618057088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_10
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 153
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1e4ea1cf3515cd20800000000000000
+      internalID: 3298065665695305247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_11
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 91
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2df0fb0c1233386d0800000000000000
+      internalID: -2989489507583193134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_12
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 91
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 312b93645d0c45130800000000000000
+      internalID: 3554678028140917267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_13
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 153
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42dd77026eeceaa00800000000000000
+      internalID: 769780074109459748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_14
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 48
+        width: 67
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f260a3ac2e6c9800800000000000000
+      internalID: 620491986673099510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_15
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 31
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84c7262335c1c9320800000000000000
+      internalID: 2565957031347518536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_16
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 31
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a04628bd165baba70800000000000000
+      internalID: 8843580250194600970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_blue-gold_02_512_17
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 48
+        width: 67
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550f58a6daedf2980800000000000000
+      internalID: -8561379530210152363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      gauge_ring-segmented_blue-gold_02_512_0: 6391109647249165663
+      gauge_ring-segmented_blue-gold_02_512_1: 4867307856061130858
+      gauge_ring-segmented_blue-gold_02_512_10: 3298065665695305247
+      gauge_ring-segmented_blue-gold_02_512_11: -2989489507583193134
+      gauge_ring-segmented_blue-gold_02_512_12: 3554678028140917267
+      gauge_ring-segmented_blue-gold_02_512_13: 769780074109459748
+      gauge_ring-segmented_blue-gold_02_512_14: 620491986673099510
+      gauge_ring-segmented_blue-gold_02_512_15: 2565957031347518536
+      gauge_ring-segmented_blue-gold_02_512_16: 8843580250194600970
+      gauge_ring-segmented_blue-gold_02_512_17: -8561379530210152363
+      gauge_ring-segmented_blue-gold_02_512_2: -8122192721265105710
+      gauge_ring-segmented_blue-gold_02_512_3: 3990551659692419683
+      gauge_ring-segmented_blue-gold_02_512_4: 4603681304768136286
+      gauge_ring-segmented_blue-gold_02_512_5: -8400473801361682445
+      gauge_ring-segmented_blue-gold_02_512_6: 5410207716154285285
+      gauge_ring-segmented_blue-gold_02_512_7: 8154006340419703186
+      gauge_ring-segmented_blue-gold_02_512_8: 8289635829578750169
+      gauge_ring-segmented_blue-gold_02_512_9: 6890164936618057088
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

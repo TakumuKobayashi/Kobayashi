@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: 1504fc69bee58024b95ffea9239c8f92
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8733099943576640582
+    second: gauge_ring-segmented_white_02_512_0
+  - first:
+      213: -6232616457609164711
+    second: gauge_ring-segmented_white_02_512_1
+  - first:
+      213: 3728244310557087449
+    second: gauge_ring-segmented_white_02_512_2
+  - first:
+      213: 4264072300318293397
+    second: gauge_ring-segmented_white_02_512_3
+  - first:
+      213: 230559090932594422
+    second: gauge_ring-segmented_white_02_512_4
+  - first:
+      213: -5171492548266430129
+    second: gauge_ring-segmented_white_02_512_5
+  - first:
+      213: 3131734965360555475
+    second: gauge_ring-segmented_white_02_512_6
+  - first:
+      213: 4197387431735570781
+    second: gauge_ring-segmented_white_02_512_7
+  - first:
+      213: -5678324151944506818
+    second: gauge_ring-segmented_white_02_512_8
+  - first:
+      213: 5131636671863683367
+    second: gauge_ring-segmented_white_02_512_9
+  - first:
+      213: -961305170006480639
+    second: gauge_ring-segmented_white_02_512_10
+  - first:
+      213: -927535320605393886
+    second: gauge_ring-segmented_white_02_512_11
+  - first:
+      213: 1676236468164304515
+    second: gauge_ring-segmented_white_02_512_12
+  - first:
+      213: -8303777561036614457
+    second: gauge_ring-segmented_white_02_512_13
+  - first:
+      213: 2827641754838892313
+    second: gauge_ring-segmented_white_02_512_14
+  - first:
+      213: -2350652438456196722
+    second: gauge_ring-segmented_white_02_512_15
+  - first:
+      213: -8327328231371131623
+    second: gauge_ring-segmented_white_02_512_16
+  - first:
+      213: 7714095399818871071
+    second: gauge_ring-segmented_white_02_512_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_0
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 398
+        width: 67
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64c9ed4f024323970800000000000000
+      internalID: 8733099943576640582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_1
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 427
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 958c3f68a5c4189a0800000000000000
+      internalID: -6232616457609164711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_2
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 427
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d650a682726db330800000000000000
+      internalID: 3728244310557087449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_3
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 398
+        width: 67
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59dfd054a270d2b30800000000000000
+      internalID: 4264072300318293397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 295
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f636ca854c133300800000000000000
+      internalID: 230559090932594422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_5
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 353
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f41fff55dea2b38b0800000000000000
+      internalID: -5171492548266430129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_6
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 353
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d57cfcbb58267b20800000000000000
+      internalID: 3131734965360555475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_7
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 295
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d51b94561ad104a30800000000000000
+      internalID: 4197387431735570781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_8
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 227
+        width: 48
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3293d3d44a8231b0800000000000000
+      internalID: -5678324151944506818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_9
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 227
+        width: 48
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7297dce4d5c373740800000000000000
+      internalID: 5131636671863683367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_10
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 153
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10964058a02c8a2f0800000000000000
+      internalID: -961305170006480639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_11
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 91
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22cffaa4a8bb023f0800000000000000
+      internalID: -927535320605393886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_12
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 91
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38e1d7ccf20334710800000000000000
+      internalID: 1676236468164304515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_13
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 153
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c49d84bd4e03cc80800000000000000
+      internalID: -8303777561036614457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_14
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 48
+        width: 67
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91ffb3dc13dcd3720800000000000000
+      internalID: 2827641754838892313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_15
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 31
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e81a96fbf0ec06fd0800000000000000
+      internalID: -2350652438456196722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_16
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 31
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 915ba09f7136f6c80800000000000000
+      internalID: -8327328231371131623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gauge_ring-segmented_white_02_512_17
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 48
+        width: 67
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f11cda525e8fd0b60800000000000000
+      internalID: 7714095399818871071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      gauge_ring-segmented_white_02_512_0: 8733099943576640582
+      gauge_ring-segmented_white_02_512_1: -6232616457609164711
+      gauge_ring-segmented_white_02_512_10: -961305170006480639
+      gauge_ring-segmented_white_02_512_11: -927535320605393886
+      gauge_ring-segmented_white_02_512_12: 1676236468164304515
+      gauge_ring-segmented_white_02_512_13: -8303777561036614457
+      gauge_ring-segmented_white_02_512_14: 2827641754838892313
+      gauge_ring-segmented_white_02_512_15: -2350652438456196722
+      gauge_ring-segmented_white_02_512_16: -8327328231371131623
+      gauge_ring-segmented_white_02_512_17: 7714095399818871071
+      gauge_ring-segmented_white_02_512_2: 3728244310557087449
+      gauge_ring-segmented_white_02_512_3: 4264072300318293397
+      gauge_ring-segmented_white_02_512_4: 230559090932594422
+      gauge_ring-segmented_white_02_512_5: -5171492548266430129
+      gauge_ring-segmented_white_02_512_6: 3131734965360555475
+      gauge_ring-segmented_white_02_512_7: 4197387431735570781
+      gauge_ring-segmented_white_02_512_8: -5678324151944506818
+      gauge_ring-segmented_white_02_512_9: 5131636671863683367
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
