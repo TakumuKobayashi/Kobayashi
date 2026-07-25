@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     [Header("コンボ関係")]
     public float Conbo;            // スコアにかかるコンボ倍率（1.0〜2.0倍など）
+    public float MaxConbo;      //最大コンボ数
 
     public int ConboCount;         // 現在の連続コンボ数
 
@@ -43,6 +44,10 @@ public class ScoreManager : MonoBehaviour
         GM.ConboUI.SetActive(true); // コンボUIを表示
 
         ConboCount++;    // コンボ数をカウントアップ
+        if(MaxConbo < ConboCount)
+        {
+            MaxConbo = ConboCount;
+        }
         ConboTimer = MaxConboTime;  // コンボ受付時間を5秒にリセット
 
         // コンボ数が1桁の場合は「09」のように脳内補正してテキスト更新

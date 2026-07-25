@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour
     [Header("ゲーム中に出現する書類情報")]
     public PaperInfo[] Syorui;     // ゲームに登場する書類の種類（インスペクターで設定）
     public GameObject BonusSyorui;
-    
+    public GameObject Resultpaper;
+
     [Header("ハンコを押す書類の判別")]
     public GameObject NextPaper;   // 次に出現予定の待機中書類
     public GameObject NowPaper;    // 現在画面中央にある処理中の書類
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
     [Header("スクリプト関係")]
     public MouseSistem MS;         // マウス操作を管理するスクリプトへの参照
     public ScoreManager SM;
+    public TotalManager TM;
 
     // ーーー ここから関数（メソッド） ーーー
 
@@ -103,7 +105,7 @@ public class GameManager : MonoBehaviour
         var syoruiNum = Random.Range(0, Syorui.Length);
         GameObject spawnedPaper = null;
         
-        if ((SM.PaperCount+1) % 10 == 0)
+        if ((SM.PaperCount) % 10 == 0 && SM.PaperCount > 0)
         {
              spawnedPaper =  Instantiate(BonusSyorui,BackSpawn.transform);
             BonusPaper BP = spawnedPaper.GetComponent<BonusPaper>();
@@ -231,6 +233,7 @@ public class GameManager : MonoBehaviour
         // 200フレームかけて少しずつ下に移動させる
         for (int i = 0; i < 200; i++)
         {
+            if(EndPaper != null)
             EndPaper.transform.position -= new Vector3(0, 5, 0); // Y座標をマイナス8ずつ下げる
             yield return null; // 1フレーム待機
         }
@@ -258,6 +261,18 @@ public class GameManager : MonoBehaviour
         //else
         {
             ConboCountUI.gameObject.SetActive(false);
+            // 今まで使っていた書類の親を退場場所（EndSpawn）に変更
+            NowPaper.transform.SetParent(EndSpawn.transform);
+
+            NowKakusi.SetActive(true); // 隠しオブジェクトを有効化
+
+            // 役目を終えた書類をEndPaperとしてキープ
+            EndPaper = NowPaper;
+
+            //Instantiate(Resultpaper, FrontSpawn.transform);
+            NowPaper = Resultpaper;
+
+            TM.StartCoroutine(TM.TotalScoreOpen());
         }
     }
 

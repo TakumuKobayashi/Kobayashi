@@ -7,10 +7,20 @@ public class SoundManager : MonoBehaviour
 
     [Header("判定音")]
     public AudioClip[] HanteiSound;
-    public AudioClip PeraSound;
+  
+    [Header("称賛音")]
     public AudioClip HakusyuSound;
+    [Header("開始音")]
     public AudioClip BlueActiveSound;
+    public AudioClip PeraSound;
+    [Header("終了音")]
     public AudioClip EndSound;
+    [Header("発表時音")]
+    public AudioClip ScoreOpenSound;
+    public AudioClip ScoreUPSound;
+    public AudioClip TotalWaitSound;
+    public AudioClip TotalOpenSound;
+    public AudioClip HyoukaOpenSound;
 
     public static SoundManager SoundM;
 
@@ -24,4 +34,9 @@ public class SoundManager : MonoBehaviour
     public void Hakusyusound() => SE.PlayOneShot(HakusyuSound);
     public void BlueActivesound() => SE.PlayOneShot(BlueActiveSound);
     public void Endsound() => SE.PlayOneShot(EndSound);
+    public void ScoreOpensound() => SE.PlayOneShot(ScoreOpenSound);
+    public void ScoreUPsound() => SE.PlayOneShot(ScoreUPSound);
+    public void TotalWaitsound() => SE.PlayOneShot(TotalWaitSound);
+    public void TotalOpensound() => SE.PlayOneShot(TotalOpenSound);
+    public void HyoukaOpensound() => SE.PlayOneShot(HyoukaOpenSound);
 }
