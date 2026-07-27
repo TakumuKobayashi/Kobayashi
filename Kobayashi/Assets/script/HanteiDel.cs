@@ -8,4 +8,9 @@ public class HanteiDel : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void HyoukaIn() => SoundManager.SoundM.HyoukaOpensound();
+    public void HyoukaOut() => SoundManager.SoundM.StopSE();
+    public void HankoIn() => SoundManager.SoundM.Hankosound();
+    
+
 }

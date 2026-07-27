@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
     public int PaperCount;         // 処理した書類の総数
 
     public int HankoCount;         // 押したハンコの総数
+    
 
     [Header("コンボ関係")]
     public float Conbo;            // スコアにかかるコンボ倍率（1.0〜2.0倍など）
@@ -142,7 +143,6 @@ public class ScoreManager : MonoBehaviour
         GM.BonusTimer += 0.5f;
         GM.BonusTimeUP();
         ConboTimer = MaxConboTime;
-        SoundManager.SoundM.Hanteisound(0);
     }
 
     

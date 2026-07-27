@@ -1,4 +1,4 @@
-                             using System.Collections;
+using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -75,6 +75,15 @@ public class GameManager : MonoBehaviour
     // ーーー ここから関数（メソッド） ーーー
 
     // ゲーム開始時に最初の書類を生成する処理
+    void Awake()
+    {
+        // ターゲットフレームレートを350FPSに固定
+       Application.targetFrameRate = 350;
+        
+        // （補足）V-Sync（垂直同期）を無効化しないとtargetFrameRateが効かない場合があります
+        QualitySettings.vSyncCount = 0;
+        
+    }
     public void FirstPaper()
     {
         // 登録されている書類情報（Syorui配列）からランダムに1つ選ぶ
@@ -105,14 +114,13 @@ public class GameManager : MonoBehaviour
         var syoruiNum = Random.Range(0, Syorui.Length);
         GameObject spawnedPaper = null;
         
-        if ((SM.PaperCount) % 10 == 0 && SM.PaperCount > 0)
+        if ((SM.PaperCount+1) % 10 == 0 && SM.PaperCount > 0)
         {
              spawnedPaper =  Instantiate(BonusSyorui,BackSpawn.transform);
             BonusPaper BP = spawnedPaper.GetComponent<BonusPaper>();
             BP.GM = MS.GM;
             NextHankoPoint = 777;
             SM.RendaCount = 0;
-            BonusActive = true;
         }
         else
         {
@@ -217,7 +225,10 @@ public class GameManager : MonoBehaviour
         MS.NowPaper = NowPaper.transform;  // マウスシステムへ新しい書類を通知
 
         SM.PaperCount++; // 処理した書類の数をカウントアップ
-        
+        if ((SM.PaperCount) % 10 == 0 && SM.PaperCount > 0)
+        {
+            BonusActive = true;
+        }
         // さらにその次の書類を裏で新しく生成
         PaperSpwan();
 
@@ -248,7 +259,22 @@ public class GameManager : MonoBehaviour
         SM.Conbo = 1.0f; // コンボ倍率を等倍(1.0)に
         ConboUI.SetActive(false); // コンボUIを隠す
         ScoreUI.text = ("Score : " + SM.Score + "pt"); // スコア表示初期化
+        SoundManager.SoundM.GameBGMsound();
         FirstPaper(); // 最初の書類をセットアップ
+    }
+
+    public void ResultMove()
+    {
+        // 今まで使っていた書類の親を退場場所（EndSpawn）に変更
+        NowPaper.transform.SetParent(EndSpawn.transform);
+
+        NowKakusi.SetActive(true); // 隠しオブジェクトを有効化
+
+        // 役目を終えた書類をEndPaperとしてキープ
+        EndPaper = NowPaper;
+
+        //Instantiate(Resultpaper, FrontSpawn.transform);
+        NowPaper = Resultpaper;
     }
 
     public void GameEnd()
@@ -261,16 +287,7 @@ public class GameManager : MonoBehaviour
         //else
         {
             ConboCountUI.gameObject.SetActive(false);
-            // 今まで使っていた書類の親を退場場所（EndSpawn）に変更
-            NowPaper.transform.SetParent(EndSpawn.transform);
-
-            NowKakusi.SetActive(true); // 隠しオブジェクトを有効化
-
-            // 役目を終えた書類をEndPaperとしてキープ
-            EndPaper = NowPaper;
-
-            //Instantiate(Resultpaper, FrontSpawn.transform);
-            NowPaper = Resultpaper;
+            MS.EndCheck();
 
             TM.StartCoroutine(TM.TotalScoreOpen());
         }
@@ -298,6 +315,7 @@ public class GameManager : MonoBehaviour
         else if (!TimerActive && ActiveEnd == 1 && !BonusActive)
         {
             Debug.Log("定時");
+            SoundManager.SoundM.StopSE();
             SoundManager.SoundM.Endsound();
             GameEnd();
             ActiveEnd = 2;
