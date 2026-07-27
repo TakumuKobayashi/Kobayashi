@@ -8,7 +8,12 @@ public class SoundManager : MonoBehaviour
     public AudioSource HankoSE;
     [Header("BGM")]
     public AudioClip InGameSound;
-    
+
+    [Header("汎用音")]
+    public AudioClip SyousaiSound;
+    public AudioClip CancelSound;
+    public AudioClip KasolSound;
+
     [Header("ハンコ音")]
     public AudioClip HankoSound;
     [Header("判定音")]
@@ -41,6 +46,9 @@ public class SoundManager : MonoBehaviour
     public void Hankosound() => HankoSE.PlayOneShot(HankoSound);
     public void Hanteisound(int Num) => SE.PlayOneShot(HanteiSound[Num]);
     public void Perasound() => SE.PlayOneShot(PeraSound);
+    public void Syousaisound() => SE.PlayOneShot(SyousaiSound);
+    public void Cancelsound() => SE.PlayOneShot(CancelSound); 
+    public void Kasolsound() => SE.PlayOneShot(KasolSound); 
     public void Hakusyusound() => ClapSE.PlayOneShot(HakusyuSound);
     public void BlueActivesound() => SE.PlayOneShot(BlueActiveSound);
     public void Endsound() => SE.PlayOneShot(EndSound);

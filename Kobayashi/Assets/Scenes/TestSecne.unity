@@ -1890,7 +1890,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58, y: 46.2}
+  m_AnchoredPosition: {x: 58, y: 56}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &886365023
@@ -2181,14 +2181,14 @@ RectTransform:
   m_GameObject: {fileID: 912173559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.58454, y: 0.58454, z: 0.58454}
+  m_LocalScale: {x: 0.6413573, y: 0.7776457, z: 0.6413573}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6775040568162122201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37.46003, y: -134}
+  m_AnchoredPosition: {x: -34, y: -134}
   m_SizeDelta: {x: 326.48, y: 70.529}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &912173561
@@ -2245,7 +2245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2301674943098832806, guid: f2e769c14454dd445aae12829a3b1afb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52317b9bcd6efd940813ee71fd174993, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2533,12 +2533,22 @@ MonoBehaviour:
   TotalScore: 0
   SyousaiCount: 000000000000000000000000000000000000000000000000
   SyousaiCountUI:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2011220561}
+  - {fileID: 886365024}
+  - {fileID: 1567087908}
+  - {fileID: 1248374784}
+  - {fileID: 1110452460}
+  - {fileID: 1588002714}
+  HyoukaCount: 10270000983a00003075000050c30000f8240100a086010040420f00
+  HyoukaImage:
+  - {fileID: 21300000, guid: 33df95d5f99c7d548bf064e91152d82b, type: 3}
+  - {fileID: 21300000, guid: 82b6d318955570747ade6d8b4c483974, type: 3}
+  - {fileID: 21300000, guid: 08dd00805c7f0cc43bd55b700642d2e1, type: 3}
+  - {fileID: 21300000, guid: 7382955bca87566488622216fc6b6b74, type: 3}
+  - {fileID: 21300000, guid: 52317b9bcd6efd940813ee71fd174993, type: 3}
+  - {fileID: 21300000, guid: 93021d9af96b5ea40b4ba5c9174fd7e9, type: 3}
+  - {fileID: 21300000, guid: aba5f1dd7a93b00448cf12086b793aee, type: 3}
+  ActiveSyousai: 0
   ScoreHyoukiUI:
   - {fileID: 6969838589485676277}
   - {fileID: 7502347998806082543}
@@ -2550,10 +2560,12 @@ MonoBehaviour:
   TotalScoreUI: {fileID: 3815292951801845225}
   AnatahaUI: {fileID: 6755937856326429645}
   HyoukaUI: {fileID: 912173559}
+  HyoukaImageUI: {fileID: 912173563}
   HankoUI: {fileID: 4408024442262373474}
   BackButton: {fileID: 292393503}
   RetryButton: {fileID: 1448750138}
   SyousaiButton: {fileID: 1820129935}
+  SyousaiUI: {fileID: 2029556744}
 --- !u!1 &1110452457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2589,7 +2601,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58, y: -53.6}
+  m_AnchoredPosition: {x: 58, y: -64}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1110452459
@@ -2974,6 +2986,9 @@ MonoBehaviour:
   ClapSE: {fileID: 620348705}
   HankoSE: {fileID: 392730259}
   InGameSound: {fileID: 8300000, guid: 867a6032e9ecdf248943dc4e59ceb1d8, type: 3}
+  SyousaiSound: {fileID: 8300000, guid: 72dc8bdf7e2262b4c87df36fb84876ab, type: 3}
+  CancelSound: {fileID: 8300000, guid: 0503dd1b93fc3384b811dfff225ce781, type: 3}
+  KasolSound: {fileID: 8300000, guid: 0d8f17efd1b11b748b63387f32f92159, type: 3}
   HankoSound: {fileID: 8300000, guid: bdda8a75cdcfe174a93610ccaef09f8e, type: 3}
   HanteiSound:
   - {fileID: 8300000, guid: 7b347f1fa8e430d4fb01b74d2168ad92, type: 3}
@@ -3024,7 +3039,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58, y: -18.4}
+  m_AnchoredPosition: {x: 58, y: -21}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1248374783
@@ -3767,7 +3782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58, y: 14}
+  m_AnchoredPosition: {x: 58, y: 17}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1567087907
@@ -3926,7 +3941,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58, y: -99.5}
+  m_AnchoredPosition: {x: 58.7, y: -115}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1588002713
@@ -4036,7 +4051,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 8.158005, w: 0}
+  m_margin: {x: 79.76626, y: 0, z: 8.158005, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4337,13 +4352,15 @@ GameObject:
   - component: {fileID: 1820129936}
   - component: {fileID: 1820129938}
   - component: {fileID: 1820129937}
+  - component: {fileID: 1820129940}
+  - component: {fileID: 1820129939}
   m_Layer: 5
   m_Name: SyousaiButtonUI
-  m_TagString: Untagged
+  m_TagString: Kakusi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1820129936
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4402,6 +4419,107 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820129935}
   m_CullTransparentMesh: 1
+--- !u!114 &1820129939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820129935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1106635655}
+          m_TargetAssemblyTypeName: TotalManager, Assembly-CSharp
+          m_MethodName: SyousaiIn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1106635655}
+          m_TargetAssemblyTypeName: TotalManager, Assembly-CSharp
+          m_MethodName: SyousaiOut
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1820129940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820129935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1820129937}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1106635655}
+        m_TargetAssemblyTypeName: TotalManager, Assembly-CSharp
+        m_MethodName: SyousaiOpen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1867430534
 GameObject:
   m_ObjectHideFlags: 0
@@ -4566,7 +4684,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58, y: 97.9}
+  m_AnchoredPosition: {x: 58, y: 114}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2011220560
@@ -4701,13 +4819,14 @@ GameObject:
   - component: {fileID: 2029556745}
   - component: {fileID: 2029556747}
   - component: {fileID: 2029556746}
+  - component: {fileID: 2029556748}
   m_Layer: 5
   m_Name: SyousaiUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2029556745
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4718,7 +4837,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.85857, y: 0.85857, z: 0.85857}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2011220559}
   - {fileID: 886365022}
@@ -4730,8 +4849,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 252, y: 14}
-  m_SizeDelta: {x: 259.7837, y: 257.2825}
+  m_AnchoredPosition: {x: 270.5, y: 3}
+  m_SizeDelta: {x: 292.3187, y: 300.1695}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2029556746
 MonoBehaviour:
@@ -4771,6 +4890,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029556744}
   m_CullTransparentMesh: 1
+--- !u!95 &2029556748
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029556744}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a3ea4126ecb838d4bb27dfded0ce2567, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2032828763
 GameObject:
   m_ObjectHideFlags: 0

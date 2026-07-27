@@ -91,6 +91,7 @@ public class ScoreManager : MonoBehaviour
         ConboCount = 0;
         Conbo = 1.0f;
         GM.ConboScoreUI.text = ("×" + Conbo+ ".0");
+        HankoCount++;
 
         // ミスによる終了だった場合のペナルティ処理
         if (Miss)
@@ -136,6 +137,7 @@ public class ScoreManager : MonoBehaviour
     public void RendaCheak()
     {
         RendaCount++;
+        HankoCount++;
         RendaUI.SetActive(true);
         RendaTextUI.gameObject.SetActive(false);
         RendaTextUI.text = $"{RendaCount}";
