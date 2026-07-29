@@ -94,12 +94,38 @@ public class TotalManager : MonoBehaviour
         }
     }
 
+    public IEnumerator SistemFadeout()
+    {
+        var TimeC = GM.TimerUI.color;
+        var ScoreC = GM.ScoreUI.color;
+        Color TimeCP = TimeC;
+        Color ScoreCP = ScoreC;
+        var BGMC =SoundManager.SoundM.BGM.GetComponent<AudioSource>();
+        var Vol = BGMC.volume;
+        var VolC = Vol / 1000;
+        SM.RendaUI.SetActive(false);
+        Debug.Log("sistem実行");
+
+        for (int i = 0;i< 1000;i++)
+        {
+            TimeCP.a -= 0.001f;
+            ScoreCP.a -= 0.001f;
+            Vol -= VolC;
+            GM.TimerUI.color = TimeCP;
+            GM.ScoreUI.color = ScoreCP;
+            BGMC.volume = Vol;
+            yield return null;
+        }
+    }
+
+
     /// <summary>
     /// リザルト画面の演出フロー（メイン）
     /// </summary>
     public IEnumerator TotalScoreOpen()
     {
         GetScoreResult(); // スコア確定
+        StartCoroutine(SistemFadeout());
 
         // --- 最初の待機 ---
         for (int i = 0; i < 1000; i++)
