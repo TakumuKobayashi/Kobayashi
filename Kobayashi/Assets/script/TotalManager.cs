@@ -246,6 +246,9 @@ public class TotalManager : MonoBehaviour
         BackButton.SetActive(true);
         GM.AntiStanpUI.SetActive(false);
         SyousaiButton.SetActive(true);
+        var a =GM.MS.HankoCol.color;
+        a.a = 1;
+        GM.MS.HankoCol.color = a;
     }
 
     /// <summary>

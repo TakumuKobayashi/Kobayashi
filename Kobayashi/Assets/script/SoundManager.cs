@@ -24,6 +24,7 @@ public class SoundManager : MonoBehaviour
     [Header("開始音")]
     public AudioClip BlueActiveSound;
     public AudioClip PeraSound;
+    public AudioClip StartSound;
     [Header("終了音")]
     public AudioClip EndSound;
     [Header("発表時音")]
@@ -58,5 +59,6 @@ public class SoundManager : MonoBehaviour
     public void TotalOpensound() => SE.PlayOneShot(TotalOpenSound);
     public void HyoukaOpensound() => SE.PlayOneShot(HyoukaOpenSound);
     public void StopSE() => SE.Stop();
+    public void Startsound() => SE.PlayOneShot(StartSound);
     
 }

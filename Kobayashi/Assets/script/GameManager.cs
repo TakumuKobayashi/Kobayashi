@@ -67,6 +67,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI TimerUI;
     public GameObject AntiStanpUI;
 
+    public GameObject StartUI;
+    public GameObject EndUI;
+
     [Header("スクリプト関係")]
     public MouseSistem MS;         // マウス操作を管理するスクリプトへの参照
     public ScoreManager SM;
@@ -84,7 +87,7 @@ public class GameManager : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         
     }
-    public void FirstPaper()
+    public IEnumerator FirstPaper()
     {
         // 登録されている書類情報（Syorui配列）からランダムに1つ選ぶ
         var syoruiNum = Random.Range(0, Syorui.Length);
@@ -99,12 +102,31 @@ public class GameManager : MonoBehaviour
 
         // その書類に必要なハンコ数をセット
         NokoriHankoCount = Syorui[syoruiNum].HankoPoint;
+        
+        NowPaper.SetActive(false);
 
         // マウスシステム側へ、現在の書類のTransformを伝える
         MS.NowPaper = NowPaper.transform;
+       
 
-        // 次の書類を裏で先読み生成しておく
-        PaperSpwan();
+        for (int i = 0; i < 500; i++)
+        {
+            yield return null;
+        }
+        
+        StartUI.SetActive(true);
+        
+        for (int i = 0; i < 500; i++)
+        {
+            yield return null;
+        }
+        NowPaper.SetActive(true);
+        StartCoroutine(PaperMove());
+        SoundManager.SoundM.GameBGMsound();
+        TimerActive = true;
+
+       // 次の書類を裏で先読み生成しておく
+              PaperSpwan();
     }
 
     // 次の書類を裏（BackSpawn）で生成・待機させておく処理
@@ -259,8 +281,7 @@ public class GameManager : MonoBehaviour
         SM.Conbo = 1.0f; // コンボ倍率を等倍(1.0)に
         ConboUI.SetActive(false); // コンボUIを隠す
         ScoreUI.text = ("Score : " + SM.Score + "pt"); // スコア表示初期化
-        SoundManager.SoundM.GameBGMsound();
-        FirstPaper(); // 最初の書類をセットアップ
+        StartCoroutine(FirstPaper()); // 最初の書類をセットアップ
     }
 
     public void ResultMove()
