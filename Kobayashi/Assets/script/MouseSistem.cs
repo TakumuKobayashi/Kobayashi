@@ -10,6 +10,7 @@ public class MouseSistem : MonoBehaviour
     public Transform NowPaper;
     public GameObject Hanko;
     public GameObject HankoPos;
+    public Image HankoCol;
 
     private GameObject HankoYosou;
     [Header("判定数確認")] 
@@ -38,6 +39,7 @@ public class MouseSistem : MonoBehaviour
     void Start()
     {
        HankoYosou= Instantiate(HankoPos, MousePos);
+       HankoCol = HankoYosou.GetComponent<Image>();
         Cursor.visible = false;
     }
 

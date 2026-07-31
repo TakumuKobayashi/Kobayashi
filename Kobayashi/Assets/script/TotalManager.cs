@@ -98,11 +98,14 @@ public class TotalManager : MonoBehaviour
     {
         var TimeC = GM.TimerUI.color;
         var ScoreC = GM.ScoreUI.color;
+        var HankoC = GM.MS.HankoCol.color; 
         Color TimeCP = TimeC;
         Color ScoreCP = ScoreC;
+        Color HankoCP = HankoC;
         var BGMC =SoundManager.SoundM.BGM.GetComponent<AudioSource>();
         var Vol = BGMC.volume;
         var VolC = Vol / 1000;
+        
         SM.RendaUI.SetActive(false);
         Debug.Log("sistem実行");
 
@@ -110,9 +113,11 @@ public class TotalManager : MonoBehaviour
         {
             TimeCP.a -= 0.001f;
             ScoreCP.a -= 0.001f;
+            HankoCP.a -= 0.001f;
             Vol -= VolC;
             GM.TimerUI.color = TimeCP;
             GM.ScoreUI.color = ScoreCP;
+            GM.MS.HankoCol.color = HankoCP;
             BGMC.volume = Vol;
             yield return null;
         }
@@ -246,17 +251,44 @@ public class TotalManager : MonoBehaviour
     /// <summary>
     /// 詳細ボタン：ホバー時の拡大
     /// </summary>
-    public void SyousaiIn()
+    public void SyousaiIn(int num)
     {
-        SyousaiButton.transform.localScale = new Vector3(0.2852955f, 0.2852955f, 0.2852955f);
+        if (num == 0)
+        {
+            SyousaiButton.transform.localScale = new Vector3(0.2852955f, 0.2852955f, 0.2852955f);
+        }
+        else if (num == 1)
+        {
+            RetryButton.transform.localScale = new Vector3(2.790183f, 2.790183f, 2.790183f);
+        }
+        else if (num == 2)
+        {
+            BackButton.transform.localScale = new Vector3(2.790183f, 2.130363f, 2.790183f);
+        }
+        
         SoundManager.SoundM.Kasolsound();
     }
 
     /// <summary>
     /// 詳細ボタン：ホバー解除で元サイズ
     /// </summary>
-    public void SyousaiOut() =>
-        SyousaiButton.transform.localScale = new Vector3(0.2270918f, 0.2270918f, 0.2270918f);
+    public void SyousaiOut(int Num)
+    {
+        if (Num == 0)
+        {
+            SyousaiButton.transform.localScale = new Vector3(0.2270918f, 0.2270918f, 0.2270918f);
+            
+        }
+        else if (Num == 1)
+        {
+            RetryButton.transform.localScale = new Vector3(2.407197f, 2.347018f, 2.347018f);
+        }
+        else if (Num == 2)
+        {
+            BackButton.transform.localScale = new Vector3(2.407197f, 1.777603f, 2.347018f);
+        }
+    }
+       
 
     /// <summary>
     /// 詳細パネルの開閉トグル
@@ -274,6 +306,14 @@ public class TotalManager : MonoBehaviour
             SyousaiUI.SetActive(false);
             SoundManager.SoundM.Cancelsound();
             ActiveSyousai = false;
+        }
+    }
+
+    public void ButtonSetumei(int Num)
+    {
+        if (Num == 0)
+        {
+            
         }
     }
 }
