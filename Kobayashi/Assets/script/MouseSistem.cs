@@ -10,12 +10,14 @@ public class MouseSistem : MonoBehaviour
     public Transform NowPaper;
     public GameObject Hanko;
     public GameObject HankoPos;
+    public Image HankoCol;
 
     private GameObject HankoYosou;
-    
-    [Header("音響関係")]
-    public AudioSource SE;
-    public AudioClip PONSound;
+    [Header("判定数確認")] 
+    public int PeCount;
+    public int GrCount;
+    public int GoCount;
+    public int BaCount;
     
     [Header("スクリプト関係")]
     public GameManager GM;
@@ -25,6 +27,8 @@ public class MouseSistem : MonoBehaviour
     [Header("座標関係")]
     public Transform MousePos;
 
+    [Header("終了関係")]
+    public bool ActiveEnd;
   
 
     // UIの検知に必要なコンポーネント
@@ -35,6 +39,7 @@ public class MouseSistem : MonoBehaviour
     void Start()
     {
        HankoYosou= Instantiate(HankoPos, MousePos);
+       HankoCol = HankoYosou.GetComponent<Image>();
         Cursor.visible = false;
     }
 
@@ -52,6 +57,7 @@ public class MouseSistem : MonoBehaviour
         if(distance <= 6)
         {
             Debug.Log("Perfect!!");
+            PeCount++;
             GetScore = 10;
             HanHyou.Hyouki(0);
             SoundManager.SoundM.Hanteisound(0);
@@ -59,6 +65,7 @@ public class MouseSistem : MonoBehaviour
         else if (distance > 6 && distance <= 16)
         {
             Debug.Log("Great!");
+            GrCount++;
             GetScore = 8;
             HanHyou.Hyouki(1);
             SoundManager.SoundM.Hanteisound(1);
@@ -66,6 +73,7 @@ public class MouseSistem : MonoBehaviour
         else if (distance > 16 && distance <= 31)
         {
             Debug.Log("Good");
+            GoCount++;
             GetScore = 5;
             HanHyou.Hyouki(2);
             SoundManager.SoundM.Hanteisound(2);
@@ -73,6 +81,7 @@ public class MouseSistem : MonoBehaviour
         else if (distance > 31)
         {
             Debug.Log("Bad");
+            BaCount++;
             GetScore = 2.0f;
             HanHyou.Hyouki(3);
             SoundManager.SoundM.Hanteisound(3);
@@ -91,6 +100,12 @@ public class MouseSistem : MonoBehaviour
 
        
         Destroy(HanteiBOX.gameObject);
+    }
+
+    public void EndCheck()
+    {
+        ActiveEnd = true;
+        NowPaper = GM.Resultpaper.transform;
     }
 
 
@@ -146,7 +161,7 @@ public class MouseSistem : MonoBehaviour
                 GameObject spawnedUI = Instantiate(Hanko, NowPaper);
                 spawnedUI.transform.position = mousePos;
 
-                SE.PlayOneShot(PONSound);
+                SoundManager.SoundM.Hankosound();
                 if(CR)
                 {
                     Destroy(HanHyou.HyoukiPast);
@@ -163,21 +178,32 @@ public class MouseSistem : MonoBehaviour
             // 3. Hantei がなくて Paper だけが見つかっていれば、Paperの処理を行う
             else if (targetPaper != null)
             {
-                GameObject spawnedUI = Instantiate(Hanko, NowPaper);
-                spawnedUI.transform.position = mousePos;
-                SM.RendaUI.SetActive(false);
-
-                SE.PlayOneShot(PONSound);
-
-                Debug.Log("?");
-                SM.Score -= 10;
-                SM.GetScoreUIUp(-10,new Color(0.83f, 0.35f, 0.35f));
-                if (SM.Score < 0) SM.Score = 0;
-
-                SM.HankoCount++;
-                GM.ScoreUI.text = ("Score : " + SM.Score + "pt");
-                SM.ConboEnd(true);
-                HanHyou.Hyouki(5);
+                if (!ActiveEnd)
+                {
+                    GameObject spawnedUI = Instantiate(Hanko, NowPaper); 
+                    spawnedUI.transform.position = mousePos; 
+                    SM.RendaUI.SetActive(false);
+                    
+                    SoundManager.SoundM.Hankosound();
+                    
+                    Debug.Log("?"); 
+                    SM.Score -= 10; 
+                    SM.GetScoreUIUp(-10,new Color(0.83f, 0.35f, 0.35f)); 
+                    if (SM.Score < 0) SM.Score = 0;
+                    
+                    SM.HankoCount++; 
+                    GM.ScoreUI.text = ("Score : " + SM.Score + "pt"); 
+                    SM.ConboEnd(true); 
+                    HanHyou.Hyouki(5);
+                    
+                }
+                else
+                {
+                    GameObject spawnedUI = Instantiate(Hanko, NowPaper); 
+                    spawnedUI.transform.position = mousePos;
+                    SoundManager.SoundM.Hankosound();
+                }
+               
             }
         }
         // --------------------------------------

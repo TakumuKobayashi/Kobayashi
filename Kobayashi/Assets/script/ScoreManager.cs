@@ -9,9 +9,11 @@ public class ScoreManager : MonoBehaviour
     public int PaperCount;         // 処理した書類の総数
 
     public int HankoCount;         // 押したハンコの総数
+    
 
     [Header("コンボ関係")]
     public float Conbo;            // スコアにかかるコンボ倍率（1.0〜2.0倍など）
+    public float MaxConbo;      //最大コンボ数
 
     public int ConboCount;         // 現在の連続コンボ数
 
@@ -43,6 +45,10 @@ public class ScoreManager : MonoBehaviour
         GM.ConboUI.SetActive(true); // コンボUIを表示
 
         ConboCount++;    // コンボ数をカウントアップ
+        if(MaxConbo < ConboCount)
+        {
+            MaxConbo = ConboCount;
+        }
         ConboTimer = MaxConboTime;  // コンボ受付時間を5秒にリセット
 
         // コンボ数が1桁の場合は「09」のように脳内補正してテキスト更新
@@ -85,6 +91,7 @@ public class ScoreManager : MonoBehaviour
         ConboCount = 0;
         Conbo = 1.0f;
         GM.ConboScoreUI.text = ("×" + Conbo+ ".0");
+        HankoCount++;
 
         // ミスによる終了だった場合のペナルティ処理
         if (Miss)
@@ -130,6 +137,7 @@ public class ScoreManager : MonoBehaviour
     public void RendaCheak()
     {
         RendaCount++;
+        HankoCount++;
         RendaUI.SetActive(true);
         RendaTextUI.gameObject.SetActive(false);
         RendaTextUI.text = $"{RendaCount}";
@@ -137,7 +145,6 @@ public class ScoreManager : MonoBehaviour
         GM.BonusTimer += 0.5f;
         GM.BonusTimeUP();
         ConboTimer = MaxConboTime;
-        SoundManager.SoundM.Hanteisound(0);
     }
 
     
