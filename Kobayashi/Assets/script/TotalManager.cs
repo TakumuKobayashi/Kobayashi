@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TotalManager : MonoBehaviour
@@ -131,6 +132,9 @@ public class TotalManager : MonoBehaviour
     {
         GetScoreResult(); // スコア確定
         StartCoroutine(SistemFadeout());
+        for (int i = 0; i < 200; i++)
+            yield return null;
+        GM.EndUI.SetActive(true);
 
         // --- 最初の待機 ---
         for (int i = 0; i < 1000; i++)
@@ -140,6 +144,10 @@ public class TotalManager : MonoBehaviour
         GM.ResultMove();
         yield return null;
         GM.StartCoroutine(GM.PaperMove());
+        var BGMC = SoundManager.SoundM.BGM.GetComponent<AudioSource>();
+        SoundManager.SoundM.BGM.Stop();
+        BGMC.volume = 0.3f;
+        SoundManager.SoundM.GameEndsound();
 
         // --- 演出待機 ---
         for (int i = 0; i < 500; i++)
@@ -246,6 +254,9 @@ public class TotalManager : MonoBehaviour
         BackButton.SetActive(true);
         GM.AntiStanpUI.SetActive(false);
         SyousaiButton.SetActive(true);
+        var a =GM.MS.HankoCol.color;
+        a.a = 1;
+        GM.MS.HankoCol.color = a;
     }
 
     /// <summary>
@@ -314,6 +325,32 @@ public class TotalManager : MonoBehaviour
         if (Num == 0)
         {
             
+        }
+    }
+
+    public void ButtonScene(int Num)
+    {
+      StartCoroutine(ChangeScene(Num));
+    }
+
+    public IEnumerator ChangeScene(int Num)
+    {
+        if(Num == 0)
+        SoundManager.SoundM.Changesound();
+        else if (Num == 1)
+            SoundManager.SoundM.TotalOpensound();
+        GM.FeedInUI.SetActive(true);
+        for (int i = 0; i < 300; i++)
+        {
+            yield return null;
+        }
+        if (Num == 0)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else if (Num == 1)
+        {
+
         }
     }
 }

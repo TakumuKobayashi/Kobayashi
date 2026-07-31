@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource HankoSE;
     [Header("BGM")]
     public AudioClip InGameSound;
+    public AudioClip GameEndSound;
 
     [Header("汎用音")]
     public AudioClip SyousaiSound;
@@ -24,7 +25,12 @@ public class SoundManager : MonoBehaviour
     [Header("開始音")]
     public AudioClip BlueActiveSound;
     public AudioClip PeraSound;
+    public AudioClip StartSound;
+    public AudioClip HajimeSound;
+    public AudioClip HankoFallSound;
     [Header("終了音")]
+    public AudioClip WarningSound;
+    public AudioClip ChangeSound;
     public AudioClip EndSound;
     [Header("発表時音")]
     public AudioClip ScoreOpenSound;
@@ -41,7 +47,8 @@ public class SoundManager : MonoBehaviour
     }
     //BGM
     public void GameBGMsound() => BGM.PlayOneShot(InGameSound);
-    
+    public void GameEndsound() => BGM.PlayOneShot(GameEndSound);
+
     //SE
     public void Hankosound() => HankoSE.PlayOneShot(HankoSound);
     public void Hanteisound(int Num) => SE.PlayOneShot(HanteiSound[Num]);
@@ -58,5 +65,9 @@ public class SoundManager : MonoBehaviour
     public void TotalOpensound() => SE.PlayOneShot(TotalOpenSound);
     public void HyoukaOpensound() => SE.PlayOneShot(HyoukaOpenSound);
     public void StopSE() => SE.Stop();
-    
+    public void Startsound() => SE.PlayOneShot(StartSound);
+    public void Hajimesound() => SE.PlayOneShot(HajimeSound);
+    public void HankoFallsound() => SE.PlayOneShot(HankoFallSound);
+    public void Warningsound() => SE.PlayOneShot(WarningSound);
+    public void Changesound() => SE.PlayOneShot(ChangeSound);
 }
