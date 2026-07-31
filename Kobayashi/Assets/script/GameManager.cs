@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public float Timer;            // ゲームの制限時間など（現時点では未使用）
     public float BonusTimer;       // コンボ等で獲得したボーナス時間
     public bool TimerActive;
+    public bool TimerRed;
 
    
     [Header("残り押さなければいけない数")]
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject StartUI;
     public GameObject EndUI;
+    public GameObject FeedInUI;
 
     [Header("スクリプト関係")]
     public MouseSistem MS;         // マウス操作を管理するスクリプトへの参照
@@ -107,7 +109,13 @@ public class GameManager : MonoBehaviour
 
         // マウスシステム側へ、現在の書類のTransformを伝える
         MS.NowPaper = NowPaper.transform;
-       
+
+        for (int i = 0; i < 200; i++)
+        {
+            yield return null;
+        }
+
+        TimerUI.gameObject.SetActive(true);
 
         for (int i = 0; i < 500; i++)
         {
@@ -324,6 +332,11 @@ public class GameManager : MonoBehaviour
 
             if(Timer > 0 && Timer <= 5)
                 TimerUI.color = new Color(1f, 0.32f, 0.34f);
+            if(Timer <= 5 && !TimerRed)
+            {
+                SoundManager.SoundM.Warningsound();
+                TimerRed = true;
+            }
 
             if (Timer <= 0)
             {
