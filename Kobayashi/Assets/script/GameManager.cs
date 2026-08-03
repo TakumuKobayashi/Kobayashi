@@ -72,6 +72,8 @@ public class GameManager : MonoBehaviour
     public GameObject EndUI;
     public GameObject FeedInUI;
 
+    [Header("残業関係")] public GameObject TeijiUI;
+
     [Header("スクリプト関係")]
     public MouseSistem MS;         // マウス操作を管理するスクリプトへの参照
     public ScoreManager SM;
@@ -309,11 +311,11 @@ public class GameManager : MonoBehaviour
     public void GameEnd()
     {
         AntiStanpUI.SetActive(true);
-        /*if (BonusTimer > 0)
+        if (BonusTimer > 0)
         {
-            
-        }*/
-        //else
+            TeijiUI.SetActive(true);
+        }
+        else
         {
             ConboCountUI.gameObject.SetActive(false);
             MS.EndCheck();
