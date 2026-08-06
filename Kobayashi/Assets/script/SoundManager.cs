@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
     [Header("BGM")]
     public AudioClip InGameSound;
     public AudioClip GameEndSound;
+    public AudioClip ZangyouBGM;
 
     [Header("汎用音")]
     public AudioClip SyousaiSound;
@@ -38,6 +39,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip TotalWaitSound;
     public AudioClip TotalOpenSound;
     public AudioClip HyoukaOpenSound;
+    
+    [Header("残業音")]
+    public AudioClip[] ZangyouSound = new AudioClip[7];
 
     public static SoundManager SoundM;
 
@@ -48,6 +52,7 @@ public class SoundManager : MonoBehaviour
     //BGM
     public void GameBGMsound() => BGM.PlayOneShot(InGameSound);
     public void GameEndsound() => BGM.PlayOneShot(GameEndSound);
+    public void Zangyoubgm() => BGM.PlayOneShot(ZangyouBGM);
 
     //SE
     public void Hankosound() => HankoSE.PlayOneShot(HankoSound);
@@ -70,4 +75,5 @@ public class SoundManager : MonoBehaviour
     public void HankoFallsound() => SE.PlayOneShot(HankoFallSound);
     public void Warningsound() => SE.PlayOneShot(WarningSound);
     public void Changesound() => SE.PlayOneShot(ChangeSound);
+    public void Zangyousound(int Num) => SE.PlayOneShot(ZangyouSound[Num]);
 }
