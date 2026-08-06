@@ -8,36 +8,39 @@ public class TeijiMove : MonoBehaviour
     public GameManager GM;
     public ScoreManager SM;
 
-    public TextMeshProUGUI ScoreUI;
     public TextMeshProUGUI TimeUI;
+    public TextMeshProUGUI ZangyouTimeUI;
     public TextMeshProUGUI BonusUI;
     public TextMeshProUGUI BairituUI;
+    public TextMeshProUGUI GoUI;
 
-    public TextMeshProUGUI ScoreDummyUI;
     public TextMeshProUGUI TimeDummyUI;
     public TextMeshProUGUI BonusDummyUI;
     public TextMeshProUGUI BairituDummyUI;
 
+    public GameObject ZangyouUI;
+    public GameObject HanteiAntiUI;
+        
     public GameObject BonusTextUI;
     public Image ConboTimerUI;
     public Image ConboTimerDummyUI;
     public GameObject TimerUI;
+    public Image TimerWUI;
     public GameObject TimerUIDummy;
     public Sprite GoldRound;
 
     public GameObject Teiji;
+    public GameObject Rainbo;
     public bool ActiveTeijiMove = false;
+    public Color RedSanple;
 
     public void DummySet01()
     {
-        ScoreUI.gameObject.SetActive(false);
         TimeUI.gameObject.SetActive(false);
         BonusUI.gameObject.SetActive(false);
         BonusTextUI.gameObject.SetActive(false);
-        ScoreDummyUI.text = ScoreUI.text;
         TimeDummyUI.text = TimeUI.text;
         BonusDummyUI.text = BonusUI.text;
-        ScoreDummyUI.gameObject.SetActive(true);
         TimeDummyUI.gameObject.SetActive(true);
         BonusDummyUI.gameObject.SetActive(true);
         ZangyouManager.ZM.ActiveZangyou = true;
@@ -55,22 +58,62 @@ public class TeijiMove : MonoBehaviour
     public void DummySet02()
     {
         SoundManager.SoundM.Zangyousound(3);
-        ActiveTeijiMove = true;
+        BairituUI.color =  RedSanple;
+        TimerWUI.sprite = GoldRound;
         if (SM.ConboCount > 0)
         {
             TimerUI.gameObject.SetActive(false);
             ConboTimerDummyUI.fillAmount = ConboTimerUI.fillAmount;
             BairituDummyUI.text = BairituUI.text;
-            ConboTimerUI.sprite = GoldRound;
             TimerUIDummy.gameObject.SetActive(true);
            
         }
     }
+    public void ZaqngyouStart()
+    {
+        SoundManager.SoundM.Zangyousound(4);
+        GoUI.text = $"Go!";
+    }
+
+    public void ActiveWave() => ActiveTeijiMove = true;
+
+    public void DummySet03()
+    {
+        ZangyouTimeUI.text = TimeDummyUI.text;
+        ZangyouTimeUI.gameObject.SetActive(true);
+        ZangyouUI.SetActive(true) ;
+        HanteiAntiUI.SetActive(false) ;
+        GM.ActiveEnd = 3;
+        GM.TimerActive = true;
+        GM.TimerRed = false;
+
+        Destroy(GM.NextPaper.gameObject);
+        Destroy(GM.NextKakusi.gameObject);
+
+        var syoruiNum = Random.Range(0, GM.Syorui.Length);
+        GameObject spawnedPaper = null;
+
+        // 待機場所（BackSpawn）の子として書類を生成
+        spawnedPaper = Instantiate(GM.Syorui[syoruiNum].Paper, GM.BackSpawn.transform);
+        // 次の書類の必要ハンコ数をキープしておく
+        GM.NextHankoPoint = GM.Syorui[syoruiNum].HankoPoint;
+
+
+        GM.NextPaper = spawnedPaper; // 次の書類として設定
+
+        // 次の書類用の判定隠しオブジェクトを生成
+        GM.NextKakusi = Instantiate(GM.HanteiKakusi, spawnedPaper.transform);
+
+        // まだ出番ではないので非アクティブ（非表示）にしておく
+        GM.NextPaper.SetActive(false);
+    }
+
 
     public void sistemFadeOut()
     {
         StartCoroutine(FadeOut());
     }
+    public void SoundStart() => SoundManager.SoundM.Changesound();
 
     public IEnumerator FadeOut()
     {
@@ -90,6 +133,15 @@ public class TeijiMove : MonoBehaviour
     }
 
     public void ZangyouS(int Num) => SoundManager.SoundM.Zangyousound(Num);
+    public void ActiveRainbo() => Rainbo.SetActive(true);
+
+    public void ZangyouBGM()
+    {
+        var BGMC = SoundManager.SoundM.BGM.GetComponent<AudioSource>();
+        SoundManager.SoundM.BGM.Stop();
+        BGMC.volume = 0.3f;
+        SoundManager.SoundM.Zangyoubgm();
+    }
     
     private void Update()
     {

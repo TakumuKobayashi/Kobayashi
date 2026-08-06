@@ -58,7 +58,7 @@ public class MouseSistem : MonoBehaviour
         {
             Debug.Log("Perfect!!");
             PeCount++;
-            GetScore = 10;
+            GetScore = 100;
             HanHyou.Hyouki(0);
             SoundManager.SoundM.Hanteisound(0);
         }
@@ -66,7 +66,7 @@ public class MouseSistem : MonoBehaviour
         {
             Debug.Log("Great!");
             GrCount++;
-            GetScore = 8;
+            GetScore = 50;
             HanHyou.Hyouki(1);
             SoundManager.SoundM.Hanteisound(1);
         }
@@ -74,7 +74,7 @@ public class MouseSistem : MonoBehaviour
         {
             Debug.Log("Good");
             GoCount++;
-            GetScore = 5;
+            GetScore = 25;
             HanHyou.Hyouki(2);
             SoundManager.SoundM.Hanteisound(2);
         }
@@ -82,7 +82,7 @@ public class MouseSistem : MonoBehaviour
         {
             Debug.Log("Bad");
             BaCount++;
-            GetScore = 2.0f;
+            GetScore = 10f;
             HanHyou.Hyouki(3);
             SoundManager.SoundM.Hanteisound(3);
         }

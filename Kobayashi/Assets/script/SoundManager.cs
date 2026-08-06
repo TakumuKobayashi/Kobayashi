@@ -52,6 +52,7 @@ public class SoundManager : MonoBehaviour
     //BGM
     public void GameBGMsound() => BGM.PlayOneShot(InGameSound);
     public void GameEndsound() => BGM.PlayOneShot(GameEndSound);
+    public void Zangyoubgm() => BGM.PlayOneShot(ZangyouBGM);
 
     //SE
     public void Hankosound() => HankoSE.PlayOneShot(HankoSound);

@@ -64,21 +64,44 @@ public class ScoreManager : MonoBehaviour
         // 3コンボごとに倍率の段階（ScoreUp）を計算
         var ScoreUp = ConboCount / 3;
 
-        // 15コンボ以下の場合、コンボ数に応じて倍率を上げる（最大5段階、1.0f + 0.2f*5 = 2.0倍）
-        if(ConboCount <= 15)
+        if(!ZangyouManager.ZM.ActiveZangyou)
         {
-            for (int i = 1; i < 6; i++)
+            // 15コンボ以下の場合、コンボ数に応じて倍率を上げる（最大5段階、1.0f + 0.2f*5 = 2.0倍）
+            if(ConboCount <= 15)
             {
-                if (ScoreUp >= i && ScoreUp < i + 1)
+            for (int i = 1; i < 6; i++)
                 {
-                    Conbo = 1.0f + 0.2f * i; // 倍率を設定（1.2倍、1.4倍...）
-                    GM.ConboScoreUI.text = ("×" + Conbo); // UIに倍率を表示
-                    if(Conbo >= 2)
-                        GM.ConboScoreUI.text = ("×" + Conbo + ".0"); // UIに倍率を表示
-                    break;
+                    if (ScoreUp >= i && ScoreUp < i + 1)
+                    {
+                        Conbo = 1.0f + 0.2f * i; // 倍率を設定（1.2倍、1.4倍...）
+                        GM.ConboScoreUI.text = ("×" + Conbo); // UIに倍率を表示
+                        if(Conbo >= 2)
+                            GM.ConboScoreUI.text = ("×" + Conbo + ".0"); // UIに倍率を表示
+                        break;
+                    }
+                }
+             }
+
+        }
+        else
+        {
+            if (ConboCount <= 15)
+            {
+                for (int i = 1; i < 6; i++)
+                {
+                    if (ScoreUp >= i && ScoreUp < i + 1)
+                    {
+                        Conbo = 2.0f * i; // 倍率を設定（1.2倍、1.4倍...）
+                        GM.ConboScoreUI.text = ("×" + Conbo); // UIに倍率を表示
+                        if (Conbo >= 2 && Conbo < 10)
+                            GM.ConboScoreUI.text = ("×" + Conbo + ".0"); // UIに倍率を表示
+                        break;
+                    }
                 }
             }
         }
+
+
     }
     
     // コンボが途切れた時、またはミスした時に呼ばれる処理

@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
     public Image ConboTimerUI;          // コンボゲージの画像（Fill Amount用）
 
     public TextMeshProUGUI TimerUI;
+    public TextMeshProUGUI ZangyouTimerUI;
     public GameObject AntiStanpUI;
 
     public GameObject StartUI;
@@ -146,7 +147,7 @@ public class GameManager : MonoBehaviour
         var syoruiNum = Random.Range(0, Syorui.Length);
         GameObject spawnedPaper = null;
         
-        if ((SM.PaperCount+1) % 10 == 0 && SM.PaperCount > 0)
+        if ((SM.PaperCount+1) % 10 == 0 && SM.PaperCount > 0 && !ZangyouManager.ZM.ActiveZangyou)
         {
              spawnedPaper =  Instantiate(BonusSyorui,BackSpawn.transform);
             BonusPaper BP = spawnedPaper.GetComponent<BonusPaper>();
@@ -197,7 +198,9 @@ public class GameManager : MonoBehaviour
         // この書類で一度もミスをしていなければ、コンボ数に応じてボーナス時間を獲得
         if(!SM.PaperMiss)
         {
-            BonusPaper++;
+            if(!ZangyouManager.ZM.ActiveZangyou)
+            {
+                BonusPaper++;
             
             var s = BonusPaper/ 2;
             //s = (int)s;
@@ -240,7 +243,8 @@ public class GameManager : MonoBehaviour
                 BonusTimeUP();
                         
                     }
-                 
+
+            }
         }
         else
         {
@@ -330,22 +334,47 @@ public class GameManager : MonoBehaviour
         if(TimerActive)
         {
             Timer -= Time.deltaTime;
-            TimerUI.text = $"Time : {Timer:F1}s"; 
+            if (ZangyouManager.ZM.ActiveZangyou)
+            {
+                ZangyouTimerUI.text = $"Time : {Timer:F1}s";
+            }
+            else
+            {
+                TimerUI.text = $"Time : {Timer:F1}s";
+            }
 
             if(Timer > 0 && Timer <= 5)
-                TimerUI.color = new Color(1f, 0.32f, 0.34f);
+            {
+                if (ZangyouManager.ZM.ActiveZangyou)
+                {
+                    ZangyouTimerUI.color = new Color(1f, 0.32f, 0.34f);
+                }
+                else
+                {
+                    TimerUI.color = new Color(1f, 0.32f, 0.34f);
+                }
+
+            }
+              
             if(Timer <= 5 && !TimerRed)
             {
                 SoundManager.SoundM.Warningsound();
                 TimerRed = true;
             }
 
-            if (Timer <= 0)
+            if (Timer <= 0 && ActiveEnd == 0)
             {
                 Timer = 0;
                 TimerUI.text = $"Time : {Timer:F1}s";
                 TimerActive = false;
                 ActiveEnd = 1;
+            }
+            else if(Timer <= 0 && ActiveEnd == 3)
+            {
+                Timer = 0;
+                TimerUI.text = $"Time : {Timer:F1}s";
+                TimerActive = false;
+                ActiveEnd = 4;
             }
         }
         else if (!TimerActive && ActiveEnd == 1 && !BonusActive)
@@ -356,6 +385,14 @@ public class GameManager : MonoBehaviour
             GameEnd();
             ActiveEnd = 2;
         }
- 
+        else if (!TimerActive && ActiveEnd == 4 && !BonusActive)
+        {
+            Debug.Log("終業");
+            SoundManager.SoundM.StopSE();
+            SoundManager.SoundM.Endsound();
+            GameEnd();
+            ActiveEnd = 5;
+        }
+
     }
 }

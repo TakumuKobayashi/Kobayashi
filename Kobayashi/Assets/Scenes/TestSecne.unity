@@ -187,7 +187,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3005415
+    rgba: 4281195495
   m_fontColor: {r: 0.9056604, g: 0.8597644, b: 0.17515129, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1437,22 +1437,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GM: {fileID: 703624455}
   SM: {fileID: 436402339}
-  ScoreUI: {fileID: 1410570294}
   TimeUI: {fileID: 0}
+  ZangyouTimeUI: {fileID: 0}
   BonusUI: {fileID: 1592343340}
   BairituUI: {fileID: 1281231998}
-  ScoreDummyUI: {fileID: 1880852298}
+  GoUI: {fileID: 0}
   TimeDummyUI: {fileID: 0}
   BonusDummyUI: {fileID: 26911733}
   BairituDummyUI: {fileID: 1927903785}
+  ZangyouUI: {fileID: 0}
+  HanteiAntiUI: {fileID: 0}
   BonusTextUI: {fileID: 0}
   ConboTimerUI: {fileID: 0}
   ConboTimerDummyUI: {fileID: 0}
   TimerUI: {fileID: 0}
+  TimerWUI: {fileID: 0}
   TimerUIDummy: {fileID: 0}
   GoldRound: {fileID: 0}
   Teiji: {fileID: 0}
+  Rainbo: {fileID: 0}
   ActiveTeijiMove: 0
+  RedSanple: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &433792517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2076,6 +2081,7 @@ MonoBehaviour:
   ConboScoreUI: {fileID: 1281231998}
   ConboTimerUI: {fileID: 2034569909}
   TimerUI: {fileID: 236043215}
+  ZangyouTimerUI: {fileID: 2006390527}
   AntiStanpUI: {fileID: 1105051917}
   StartUI: {fileID: 1874518160}
   EndUI: {fileID: 1437842593}
@@ -2783,11 +2789,11 @@ Transform:
   m_LocalScale: {x: 2.2608254, y: 2.2608254, z: 2.2608254}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 433792514}
   - {fileID: 1116966066}
   - {fileID: 383367492}
   - {fileID: 1880852296}
   - {fileID: 1373787397}
+  - {fileID: 433792514}
   m_Father: {fileID: 1004052814}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &903261124
@@ -2838,22 +2844,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GM: {fileID: 703624455}
   SM: {fileID: 436402339}
-  ScoreUI: {fileID: 1410570294}
   TimeUI: {fileID: 236043215}
+  ZangyouTimeUI: {fileID: 2006390527}
   BonusUI: {fileID: 1592343340}
   BairituUI: {fileID: 1281231998}
-  ScoreDummyUI: {fileID: 1880852298}
+  GoUI: {fileID: 1373787398}
   TimeDummyUI: {fileID: 1880852298}
   BonusDummyUI: {fileID: 26911733}
   BairituDummyUI: {fileID: 1927903785}
+  ZangyouUI: {fileID: 1611147800}
+  HanteiAntiUI: {fileID: 1105051917}
   BonusTextUI: {fileID: 2136319475}
   ConboTimerUI: {fileID: 2034569909}
-  ConboTimerDummyUI: {fileID: 2034569909}
+  ConboTimerDummyUI: {fileID: 1462120537}
   TimerUI: {fileID: 164262465}
+  TimerWUI: {fileID: 734543658}
   TimerUIDummy: {fileID: 1759715965}
   GoldRound: {fileID: 8582572252007546767, guid: 9b93662a43a7ffb4a91d49a460597f98, type: 3}
   Teiji: {fileID: 433792513}
+  Rainbo: {fileID: 1627849648}
   ActiveTeijiMove: 0
+  RedSanple: {r: 0.94509804, g: 0.19215687, b: 0.19215687, a: 1}
 --- !u!1 &912173559
 GameObject:
   m_ObjectHideFlags: 0
@@ -3005,9 +3016,9 @@ RectTransform:
   - {fileID: 2006390526}
   - {fileID: 1410570293}
   - {fileID: 1344568938}
-  - {fileID: 1611147801}
   - {fileID: 1603332615}
   - {fileID: 1759715966}
+  - {fileID: 1611147801}
   - {fileID: 903261123}
   - {fileID: 2136319476}
   - {fileID: 60478973}
@@ -3326,7 +3337,7 @@ MonoBehaviour:
   - {fileID: 1248374784}
   - {fileID: 1110452460}
   - {fileID: 1588002714}
-  HyoukaCount: 10270000983a00003075000050c30000f8240100a086010040420f00
+  HyoukaCount: 10270000204e000050c30000f8240100a0860100400d030020a10700
   HyoukaImage:
   - {fileID: 21300000, guid: 33df95d5f99c7d548bf064e91152d82b, type: 3}
   - {fileID: 21300000, guid: 82b6d318955570747ade6d8b4c483974, type: 3}
@@ -3353,6 +3364,8 @@ MonoBehaviour:
   RetryButton: {fileID: 1448750138}
   SyousaiButton: {fileID: 1820129935}
   SyousaiUI: {fileID: 2029556744}
+  SZUI: {fileID: 1611147802}
+  RainboAnim: {fileID: 1627849652}
 --- !u!1 &1110452457
 GameObject:
   m_ObjectHideFlags: 0
@@ -3678,7 +3691,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3005415
+    rgba: 4281195495
   m_fontColor: {r: 0.9056604, g: 0.8597644, b: 0.17515129, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3913,7 +3926,7 @@ MonoBehaviour:
   HankoSE: {fileID: 392730259}
   InGameSound: {fileID: 8300000, guid: 867a6032e9ecdf248943dc4e59ceb1d8, type: 3}
   GameEndSound: {fileID: 8300000, guid: 49fab53ed1ac0c646bba03835417e038, type: 3}
-  ZangyouBGM: {fileID: 8300000, guid: 787345f2e241d5845b087953bb98693c, type: 3}
+  ZangyouBGM: {fileID: 8300000, guid: e26e987c1bb9e5d47bb69b7b9add90ae, type: 3}
   SyousaiSound: {fileID: 8300000, guid: 72dc8bdf7e2262b4c87df36fb84876ab, type: 3}
   CancelSound: {fileID: 8300000, guid: 0503dd1b93fc3384b811dfff225ce781, type: 3}
   KasolSound: {fileID: 8300000, guid: 0d8f17efd1b11b748b63387f32f92159, type: 3}
@@ -4372,7 +4385,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GO!
+  m_text: Ready?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 11a96d9e1c90dc64db6fc5fbd152a90e, type: 2}
   m_sharedMaterial: {fileID: 8717067910571912886, guid: 11a96d9e1c90dc64db6fc5fbd152a90e, type: 2}
@@ -4437,7 +4450,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 78.7014, y: 0, z: 53.235104, w: 0}
+  m_margin: {x: 20.326782, y: 0, z: -0.43189245, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5794,6 +5807,8 @@ GameObject:
   - component: {fileID: 1627849651}
   - component: {fileID: 1627849650}
   - component: {fileID: 1627849652}
+  - component: {fileID: 1627849654}
+  - component: {fileID: 1627849653}
   m_Layer: 5
   m_Name: Rainbo
   m_TagString: Untagged
@@ -5880,6 +5895,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1627849653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627849648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36205c7d4ce2c9469f8f0fce8b958dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1627849654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627849648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74746d5b513f75e4e839a7f306c9e853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1759715965
 GameObject:
   m_ObjectHideFlags: 0
@@ -5893,6 +5932,7 @@ GameObject:
   - component: {fileID: 1759715968}
   - component: {fileID: 1759715967}
   - component: {fileID: 1759715970}
+  - component: {fileID: 1759715971}
   m_Layer: 5
   m_Name: ConboTimerB Dummy
   m_TagString: Untagged
@@ -5957,7 +5997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 722a7eef0237f1c4f9ad9cb1446a8f1d, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5994,6 +6034,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74746d5b513f75e4e839a7f306c9e853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1759715971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759715965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511296e330c6523499420d3daada8975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GM: {fileID: 703624455}
+  SM: {fileID: 436402339}
+  ConboTimerUI: {fileID: 164262465}
+  ConboTimerDummyUI: {fileID: 1759715965}
+  TextTimerDummyUI: {fileID: 1927903785}
+  TextTimerUI: {fileID: 1281231998}
+  redColorsan: {r: 0.9450981, g: 0.19215688, b: 0.19215688, a: 1}
 --- !u!1 &1782468187
 GameObject:
   m_ObjectHideFlags: 0
@@ -6030,7 +6089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16.337036, y: -17.113892}
+  m_AnchoredPosition: {x: -16.336914, y: -17.113892}
   m_SizeDelta: {x: 120.14, y: 109.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1782468189
@@ -6842,7 +6901,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282137672
+    rgba: 4281545713
   m_fontColor: {r: 0.2830189, g: 0.23629408, b: 0.23629408, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

@@ -49,6 +49,11 @@ public class TotalManager : MonoBehaviour
     public GameObject SyousaiButton; // 詳細ボタン
     public GameObject SyousaiUI;    // 詳細パネル
 
+    public Image SZUI;
+
+    [Header("アニメーション")]
+    public Animator RainboAnim;
+
     /// <summary>
     /// プレイ結果を取得してトータルスコアを計算＆ハイスコア保存
     /// </summary>
@@ -78,6 +83,7 @@ public class TotalManager : MonoBehaviour
         // --- ハイスコア更新 ---
         if (High < TotalScore)
         {
+            Debug.Log("ハイスコア更新！");
             PlayerPrefs.SetFloat("TotalScoreR", TotalScore);
             PlayerPrefs.SetFloat("ScoreR", ScoreT[0]);
             PlayerPrefs.SetFloat("ConboR", ScoreT[1]);
@@ -98,27 +104,34 @@ public class TotalManager : MonoBehaviour
     public IEnumerator SistemFadeout()
     {
         var TimeC = GM.TimerUI.color;
+        var ZangyouTimeC = GM.ZangyouTimerUI.color;
         var ScoreC = GM.ScoreUI.color;
         var HankoC = GM.MS.HankoCol.color; 
         Color TimeCP = TimeC;
+        Color ZTimeCP = ZangyouTimeC;
         Color ScoreCP = ScoreC;
         Color HankoCP = HankoC;
+        Color SZUICP = SZUI.color;
         var BGMC =SoundManager.SoundM.BGM.GetComponent<AudioSource>();
         var Vol = BGMC.volume;
         var VolC = Vol / 1000;
         
         SM.RendaUI.SetActive(false);
-        Debug.Log("sistem実行");
+        RainboAnim.SetTrigger("Out");
 
         for (int i = 0;i< 1000;i++)
         {
             TimeCP.a -= 0.001f;
+            ZTimeCP.a -= 0.001f;
             ScoreCP.a -= 0.001f;
             HankoCP.a -= 0.001f;
+            SZUICP.a -= 0.001f;
             Vol -= VolC;
             GM.TimerUI.color = TimeCP;
+            GM.ZangyouTimerUI.color = ZTimeCP;
             GM.ScoreUI.color = ScoreCP;
             GM.MS.HankoCol.color = HankoCP;
+            SZUI.color = SZUICP;
             BGMC.volume = Vol;
             yield return null;
         }
@@ -225,9 +238,11 @@ public class TotalManager : MonoBehaviour
         // 高いランクから順にチェックして一致したものをセット
         for (int i = 6; i >= 0; i--)
         {
+            //Debug.Log("トータル："+TotalScore+"基準 : "+HyoukaCount[i]);
             if (TotalScore >= HyoukaCount[i])
             {
                 HyoukaImageUI.sprite = HyoukaImage[i];
+                break;
             }
         }
 
