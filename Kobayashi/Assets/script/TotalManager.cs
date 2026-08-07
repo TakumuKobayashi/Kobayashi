@@ -335,14 +335,6 @@ public class TotalManager : MonoBehaviour
         }
     }
 
-    public void ButtonSetumei(int Num)
-    {
-        if (Num == 0)
-        {
-            
-        }
-    }
-
     public void ButtonScene(int Num)
     {
       StartCoroutine(ChangeScene(Num));
@@ -365,7 +357,7 @@ public class TotalManager : MonoBehaviour
         }
         else if (Num == 1)
         {
-
+            SceneManager.LoadScene(1);
         }
     }
 }
