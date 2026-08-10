@@ -135,6 +135,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(PaperMove());
         SoundManager.SoundM.GameBGMsound();
         TimerActive = true;
+        PauseManager.PM.ActiveESC = true;
 
        // 次の書類を裏で先読み生成しておく
               PaperSpwan();
@@ -315,6 +316,7 @@ public class GameManager : MonoBehaviour
     public void GameEnd()
     {
         AntiStanpUI.SetActive(true);
+        PauseManager.PM.ActiveESC = false;
         if (BonusTimer > 0)
         {
             TeijiUI.SetActive(true);

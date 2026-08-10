@@ -86,6 +86,7 @@ public class TeijiMove : MonoBehaviour
         GM.ActiveEnd = 3;
         GM.TimerActive = true;
         GM.TimerRed = false;
+        PauseManager.PM.ActiveESC = true;
 
         Destroy(GM.NextPaper.gameObject);
         Destroy(GM.NextKakusi.gameObject);
