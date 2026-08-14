@@ -88,7 +88,6 @@ public class TotalManager : MonoBehaviour
             PlayerPrefs.SetFloat("ScoreR", ScoreT[0]);
             PlayerPrefs.SetFloat("ConboR", ScoreT[1]);
             PlayerPrefs.SetFloat("PaperR", ScoreT[2]);
-
             // 詳細データも保存
             PlayerPrefs.SetFloat("HankoR", SyousaiCount[0]);
             PlayerPrefs.SetFloat("PerfectR", SyousaiCount[1]);
@@ -107,10 +106,12 @@ public class TotalManager : MonoBehaviour
         var ZangyouTimeC = GM.ZangyouTimerUI.color;
         var ScoreC = GM.ScoreUI.color;
         var HankoC = GM.MS.HankoCol.color; 
+        var HandC = GM.MS.HandCol.color; 
         Color TimeCP = TimeC;
         Color ZTimeCP = ZangyouTimeC;
         Color ScoreCP = ScoreC;
         Color HankoCP = HankoC;
+        Color HandCP = HandC;
         Color SZUICP = SZUI.color;
         var BGMC =SoundManager.SoundM.BGM.GetComponent<AudioSource>();
         var Vol = BGMC.volume;
@@ -125,12 +126,14 @@ public class TotalManager : MonoBehaviour
             ZTimeCP.a -= 0.001f;
             ScoreCP.a -= 0.001f;
             HankoCP.a -= 0.001f;
+            HandCP.a -= 0.001f;
             SZUICP.a -= 0.001f;
             Vol -= VolC;
             GM.TimerUI.color = TimeCP;
             GM.ZangyouTimerUI.color = ZTimeCP;
             GM.ScoreUI.color = ScoreCP;
             GM.MS.HankoCol.color = HankoCP;
+            GM.MS.HandCol.color = HandCP;
             SZUI.color = SZUICP;
             BGMC.volume = Vol;
             yield return null;
@@ -272,6 +275,7 @@ public class TotalManager : MonoBehaviour
         var a =GM.MS.HankoCol.color;
         a.a = 1;
         GM.MS.HankoCol.color = a;
+        GM.MS.HandCol.color = Color.white;
     }
 
     /// <summary>

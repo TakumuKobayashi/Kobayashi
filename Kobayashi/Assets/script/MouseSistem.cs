@@ -4,15 +4,19 @@ using UnityEngine.EventSystems;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System.Collections;
 
 public class MouseSistem : MonoBehaviour
 {
     [Header("UI関係")]
     public Transform NowPaper;
     public GameObject Hanko;
+    public GameObject Hand;
     public GameObject HankoPos;
     public Image HankoCol;
+    public Image HandCol;
     private GameObject HankoYosou;
+    public GameObject Handpos;
     [Header("感度関連")]
     public float Sen = 1.00f;
     public Vector3 Mousepos;
@@ -43,8 +47,12 @@ public class MouseSistem : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       HankoYosou= Instantiate(HankoPos, MousePos);
-       HankoCol = HankoYosou.GetComponent<Image>();
+       HankoYosou= Instantiate(Hand, MousePos);
+        Handanim han = HankoYosou.GetComponent<Handanim>();
+        Handpos = han.HandPos;
+        HankoPos = han.HankoPos;
+        HankoCol = HankoPos.GetComponent<Image>();
+        HandCol = han.HandCol;
         Cursor.visible = false;
         Mousepos = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
     }
@@ -112,6 +120,13 @@ public class MouseSistem : MonoBehaviour
     {
         ActiveEnd = true;
         NowPaper = GM.Resultpaper.transform;
+    }
+    
+    public IEnumerator HandMove()
+    {
+        Handpos.SetActive(false);
+        yield return null;
+        Handpos.SetActive(true);
     }
 
 
@@ -187,6 +202,7 @@ public class MouseSistem : MonoBehaviour
             // 2. 【最優先】Hantei が見つかっていれば、Hanteiの処理を行う（Paperは無視）
             if (targetHantei != null)
             {
+                StartCoroutine(HandMove());
                 GameObject spawnedUI = Instantiate(Hanko, NowPaper);
                 spawnedUI.transform.position = Mousepos;
 
@@ -209,7 +225,8 @@ public class MouseSistem : MonoBehaviour
             {
                 if (!ActiveEnd)
                 {
-                    GameObject spawnedUI = Instantiate(Hanko, NowPaper); 
+                    StartCoroutine(HandMove());
+                    GameObject spawnedUI = Instantiate(Hanko, NowPaper);
                     spawnedUI.transform.position = Mousepos; 
                     SM.RendaUI.SetActive(false);
                     
@@ -228,7 +245,8 @@ public class MouseSistem : MonoBehaviour
                 }
                 else
                 {
-                    GameObject spawnedUI = Instantiate(Hanko, NowPaper); 
+                    StartCoroutine(HandMove());
+                    GameObject spawnedUI = Instantiate(Hanko, NowPaper);
                     spawnedUI.transform.position = Mousepos;
                     SoundManager.SoundM.Hankosound();
                 }
