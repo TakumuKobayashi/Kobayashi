@@ -2,17 +2,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System.Collections;
 
 public class MouseSistem : MonoBehaviour
 {
     [Header("UI関係")]
     public Transform NowPaper;
     public GameObject Hanko;
+    public GameObject Hand;
     public GameObject HankoPos;
     public Image HankoCol;
-
+    public Image HandCol;
     private GameObject HankoYosou;
+    public GameObject Handpos;
+    [Header("感度関連")]
+    public float Sen = 1.00f;
+    public Vector3 Mousepos;
+    public bool ActiveCasol;
+
     [Header("判定数確認")] 
     public int PeCount;
     public int GrCount;
@@ -23,7 +32,7 @@ public class MouseSistem : MonoBehaviour
     public GameManager GM;
     public ScoreManager SM;
     public HanteiHyouki HanHyou;
-    
+        
     [Header("座標関係")]
     public Transform MousePos;
 
@@ -38,9 +47,14 @@ public class MouseSistem : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       HankoYosou= Instantiate(HankoPos, MousePos);
-       HankoCol = HankoYosou.GetComponent<Image>();
+       HankoYosou= Instantiate(Hand, MousePos);
+        Handanim han = HankoYosou.GetComponent<Handanim>();
+        Handpos = han.HandPos;
+        HankoPos = han.HankoPos;
+        HankoCol = HankoPos.GetComponent<Image>();
+        HandCol = han.HandCol;
         Cursor.visible = false;
+        Mousepos = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
     }
 
     public void HanteiCheck(Vector2 MP,GameObject HanteiBOX)
@@ -107,20 +121,50 @@ public class MouseSistem : MonoBehaviour
         ActiveEnd = true;
         NowPaper = GM.Resultpaper.transform;
     }
+    
+    public IEnumerator HandMove()
+    {
+        Handpos.SetActive(false);
+        yield return null;
+        Handpos.SetActive(true);
+    }
 
 
     // Update is called once per frame
     void Update()
     {
-         /// 1. マウスの画面座標を取得
-            Vector3 mousePos = Input.mousePosition;
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            ActiveCasol = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.L))
+        {
+            ActiveCasol = false;
+        }
 
-        HankoYosou.transform.position = mousePos;
+        // ----------------------------------------------------
+        // 1. マウスの移動量を計算し、仮想カーソル位置を更新
+        // ----------------------------------------------------
+        // Input.GetAxis でフレームごとのマウス移動量を取得し、感度（sensitivity）を適用
+        float mouseX = Input.GetAxis("Mouse X") * Sen * 20f;
+        float mouseY = Input.GetAxis("Mouse Y") * Sen * 20f;
+
+        Mousepos.x += mouseX;
+        Mousepos.y += mouseY;
+
+        // 仮想カーソルが画面外に出ないよう、画面サイズ内（0 ～ Screen幅/高さ）に制限
+        Mousepos.x = Mathf.Clamp(Mousepos.x, 0, Screen.width);
+        Mousepos.y = Mathf.Clamp(Mousepos.y, 0, Screen.height);
+
+        // 追従表示するハンコの見た目（カーソル代わり）の位置を更新
+        HankoYosou.transform.position = Mousepos;
+        if(!ActiveCasol) 
+        Mouse.current.WarpCursorPosition(HankoYosou.transform.position);
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             PointerEventData pointerData = new PointerEventData(eventSystem);
-            pointerData.position = mousePos;
+            pointerData.position = Mousepos;
 
             List<RaycastResult> results = new List<RaycastResult>();
             graphicRaycaster.Raycast(pointerData, results);
@@ -158,8 +202,9 @@ public class MouseSistem : MonoBehaviour
             // 2. 【最優先】Hantei が見つかっていれば、Hanteiの処理を行う（Paperは無視）
             if (targetHantei != null)
             {
+                StartCoroutine(HandMove());
                 GameObject spawnedUI = Instantiate(Hanko, NowPaper);
-                spawnedUI.transform.position = mousePos;
+                spawnedUI.transform.position = Mousepos;
 
                 SoundManager.SoundM.Hankosound();
                 if(CR)
@@ -170,7 +215,7 @@ public class MouseSistem : MonoBehaviour
                 else
                 {
                     SM.RendaUI.SetActive(false);
-                    HanteiCheck(mousePos, targetHantei);
+                    HanteiCheck(Mousepos, targetHantei);
                 }
 
                     
@@ -180,8 +225,9 @@ public class MouseSistem : MonoBehaviour
             {
                 if (!ActiveEnd)
                 {
-                    GameObject spawnedUI = Instantiate(Hanko, NowPaper); 
-                    spawnedUI.transform.position = mousePos; 
+                    StartCoroutine(HandMove());
+                    GameObject spawnedUI = Instantiate(Hanko, NowPaper);
+                    spawnedUI.transform.position = Mousepos; 
                     SM.RendaUI.SetActive(false);
                     
                     SoundManager.SoundM.Hankosound();
@@ -199,21 +245,15 @@ public class MouseSistem : MonoBehaviour
                 }
                 else
                 {
-                    GameObject spawnedUI = Instantiate(Hanko, NowPaper); 
-                    spawnedUI.transform.position = mousePos;
+                    StartCoroutine(HandMove());
+                    GameObject spawnedUI = Instantiate(Hanko, NowPaper);
+                    spawnedUI.transform.position = Mousepos;
                     SoundManager.SoundM.Hankosound();
                 }
                
             }
         }
-        // --------------------------------------
-        //// 2. UIをCanvasの子要素として生成
-        //GameObject spawnedUI = Instantiate(Hanko, NowPaper);
-
-        //// 3. 生成したUIの画面位置にマウス座標をそのままセット
-        //spawnedUI.transform.position = mousePos;
-
-        //SE.PlayOneShot(PONSound);
+        
          
     }
 }

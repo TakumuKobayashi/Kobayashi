@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip SyousaiSound;
     public AudioClip CancelSound;
     public AudioClip KasolSound;
+    public AudioClip SettingSound;
 
     [Header("ハンコ音")]
     public AudioClip HankoSound;
@@ -39,7 +40,11 @@ public class SoundManager : MonoBehaviour
     public AudioClip TotalWaitSound;
     public AudioClip TotalOpenSound;
     public AudioClip HyoukaOpenSound;
-    
+
+    [Header("休憩音")]
+    public AudioClip PauseInSound;
+    public AudioClip PauseOutSound;
+
     [Header("残業音")]
     public AudioClip[] ZangyouSound = new AudioClip[7];
 
@@ -75,5 +80,8 @@ public class SoundManager : MonoBehaviour
     public void HankoFallsound() => SE.PlayOneShot(HankoFallSound);
     public void Warningsound() => SE.PlayOneShot(WarningSound);
     public void Changesound() => SE.PlayOneShot(ChangeSound);
+    public void PauseInsound() => SE.PlayOneShot(PauseInSound);
+    public void PauseOutsound() => SE.PlayOneShot(PauseOutSound);
+    public void Settingsound() => SE.PlayOneShot(SettingSound);
     public void Zangyousound(int Num) => SE.PlayOneShot(ZangyouSound[Num]);
 }

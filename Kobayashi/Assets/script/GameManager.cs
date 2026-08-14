@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
     public MouseSistem MS;         // マウス操作を管理するスクリプトへの参照
     public ScoreManager SM;
     public TotalManager TM;
+    public PauseManager PM;
 
     // ーーー ここから関数（メソッド） ーーー
 
@@ -135,6 +136,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(PaperMove());
         SoundManager.SoundM.GameBGMsound();
         TimerActive = true;
+        PM.ActiveESC = true;
 
        // 次の書類を裏で先読み生成しておく
               PaperSpwan();
@@ -315,6 +317,7 @@ public class GameManager : MonoBehaviour
     public void GameEnd()
     {
         AntiStanpUI.SetActive(true);
+        PM.ActiveESC = false;
         if (BonusTimer > 0)
         {
             TeijiUI.SetActive(true);
