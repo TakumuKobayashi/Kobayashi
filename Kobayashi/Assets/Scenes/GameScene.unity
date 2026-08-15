@@ -320,7 +320,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3005415
+    rgba: 4281195495
   m_fontColor: {r: 0.9056604, g: 0.8597644, b: 0.17515129, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5324,7 +5324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &903261123
 Transform:
   m_ObjectHideFlags: 0
@@ -5690,7 +5690,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 945249352}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1106635655}
+        m_TargetAssemblyTypeName: TotalManager, Assembly-CSharp
+        m_MethodName: ButtonScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &945249352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6707,7 +6719,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3005415
+    rgba: 4281195495
   m_fontColor: {r: 0.9056604, g: 0.8597644, b: 0.17515129, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7158,7 +7170,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1212051466}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1106635655}
+        m_TargetAssemblyTypeName: TotalManager, Assembly-CSharp
+        m_MethodName: ButtonScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1212051466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7363,6 +7387,8 @@ MonoBehaviour:
   InGameSound: {fileID: 8300000, guid: 867a6032e9ecdf248943dc4e59ceb1d8, type: 3}
   GameEndSound: {fileID: 8300000, guid: 49fab53ed1ac0c646bba03835417e038, type: 3}
   ZangyouBGM: {fileID: 8300000, guid: e26e987c1bb9e5d47bb69b7b9add90ae, type: 3}
+  TitleBGMFull: {fileID: 0}
+  TitleBGMLoop: {fileID: 0}
   SyousaiSound: {fileID: 8300000, guid: 72dc8bdf7e2262b4c87df36fb84876ab, type: 3}
   CancelSound: {fileID: 8300000, guid: 0503dd1b93fc3384b811dfff225ce781, type: 3}
   KasolSound: {fileID: 8300000, guid: 0d8f17efd1b11b748b63387f32f92159, type: 3}
@@ -8109,7 +8135,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2274793
+    rgba: 4280464873
   m_fontColor: {r: 0.9150943, g: 0.71175146, b: 0.13381095, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -11686,7 +11712,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b9c3d00eda0704e499ddf03748c1ab38, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

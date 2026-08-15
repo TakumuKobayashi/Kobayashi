@@ -294,6 +294,7 @@ public class GameManager : MonoBehaviour
     // ゲーム起動時に1度だけ実行される初期化処理
     void Start()
     {
+        Time.timeScale = 1;
         SM.Conbo = 1.0f; // コンボ倍率を等倍(1.0)に
         ConboUI.SetActive(false); // コンボUIを隠す
         ScoreUI.text = ("Score : " + SM.Score + "pt"); // スコア表示初期化

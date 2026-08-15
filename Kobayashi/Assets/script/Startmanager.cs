@@ -5,31 +5,40 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class Startmanager : MonoBehaviour
 {
+    [Header("タイトルボタン関係")]
     public GameObject[] buttonUI = new GameObject[4];
     public Vector3[] InScaleUI = new Vector3[4];
     public Vector3[] OutScaleUI = new Vector3[4];
     public GameObject BlackIn;
 
+    [Header("説明関係")]
     public GameObject InfoUI;
     public GameObject[] InfoPaper;
     public int InfoPaperCount = 0;
 
+    [Header("UI関係")]
     public StartMouseSistem SMS;
     public GameObject CheckUI;
     public GameObject SettingUI;
     public GameObject[] TypeCheckUI;
+    public GameObject ScoreUI;
+    public GameObject ScoreSyousaiUI;
 
+    [Header("ハイスコア関係")]
     public Image ScoreButtonUI;
     public TextMeshProUGUI[] ScoreTextUI;
     public int[] HyoukaCount;
     public Sprite[] HyoukaImage;
     public Image HyoukaImageUI;
 
+    [Header("現在の状態関係")]
     public bool ActiveEsc;
     public bool ActiveInfo;
     public bool ActiveSetting;
     public bool ActiveEndCheck;
-    public bool ActiveScoreOn;
+    public int ActiveScoreState;
+    public bool ActiveBGMFull;
+    public bool ActiveSyousai;
 
 
     //主にボタンの中に入る関数たち
@@ -169,11 +178,52 @@ public class Startmanager : MonoBehaviour
         ActiveSetting = false;
     }
 
+    public void ScoreOpen()
+    {
+        if (ActiveScoreState == 1)
+        {
+            ScoreUI.SetActive(true);
+            SoundManager.SoundM.Settingsound();
+            ActiveScoreState = 2;
+        }
+        else if(ActiveScoreState == 0) 
+        {
+            SoundManager.SoundM.Warningsound();
+        }
+    }
+
+    public void SyousaiButton()
+    {
+        if(!ActiveSyousai)
+        {
+            ScoreSyousaiUI.SetActive(true);
+            SoundManager.SoundM.Syousaisound();
+            ActiveSyousai = true;
+        }
+        else
+        {
+            ScoreSyousaiUI.SetActive(false);
+            SoundManager.SoundM.Cancelsound();
+            ActiveSyousai = false;
+        }
+    }
+
+    public void ScoreClose()
+    {
+            ScoreUI.SetActive(false);
+            SoundManager.SoundM.Cancelsound();
+            ActiveScoreState = 1;
+        }
+
     private void Start()
     {
+        Time.timeScale = 1;
         var High = PlayerPrefs.GetFloat("TotalScoreR", 0);
+        SoundManager.SoundM.TitleBGMfull();
+        ActiveBGMFull = true;
         if (High > 0)
         {
+            ActiveScoreState = 1;
             ScoreButtonUI.color = Color.white;
             ScoreTextUI[0].text = $"{PlayerPrefs.GetFloat("TotalScoreR")}";
             ScoreTextUI[1].text = $"{PlayerPrefs.GetFloat("ScoreR")}";
@@ -215,7 +265,11 @@ public class Startmanager : MonoBehaviour
                 {
                     SettingOut();
                 }
-                else if(ActiveEndCheck)
+                else if(ActiveScoreState == 2)
+                {
+                    ScoreClose();
+                }
+                else if (ActiveEndCheck)
                 {
 
                 }
@@ -223,6 +277,15 @@ public class Startmanager : MonoBehaviour
                 {
                     CheckUIOpen(0);
                 }
+            }
+        }
+
+        if(ActiveBGMFull)
+        {
+            if(!SoundManager.SoundM.BGM.isPlaying)
+            {
+                ActiveBGMFull = false;
+                SoundManager.SoundM.TitleBGMloop();
             }
         }
     }

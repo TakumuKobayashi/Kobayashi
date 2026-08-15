@@ -10,6 +10,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip InGameSound;
     public AudioClip GameEndSound;
     public AudioClip ZangyouBGM;
+    public AudioClip TitleBGMFull;
+    public AudioClip TitleBGMLoop;
 
     [Header("汎用音")]
     public AudioClip SyousaiSound;
@@ -58,6 +60,13 @@ public class SoundManager : MonoBehaviour
     public void GameBGMsound() => BGM.PlayOneShot(InGameSound);
     public void GameEndsound() => BGM.PlayOneShot(GameEndSound);
     public void Zangyoubgm() => BGM.PlayOneShot(ZangyouBGM);
+    public void TitleBGMfull() => BGM.PlayOneShot(TitleBGMFull);
+    public void TitleBGMloop()
+    {
+        BGM.loop = true;
+        BGM.resource = TitleBGMLoop;
+        BGM.Play();
+    }
 
     //SE
     public void Hankosound() => HankoSE.PlayOneShot(HankoSound);
