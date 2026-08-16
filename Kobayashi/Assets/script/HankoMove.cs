@@ -76,7 +76,7 @@ public class HankoMove : MonoBehaviour
                 if (MoveR)
                 {
                     this.transform.position = new Vector3(H.x + 1, H.y, H.z);
-                    if (this.transform.position == HankoSpawnPos.transform.position)
+                    if (this.transform.position.x >= HankoSpawnPos.transform.position.x)
                     {
                         HankoMove Hankoscr = HankoSpawnPos.GetComponent<HankoMove>();
                         Hankoscr.NewHanko(MoveR, this.gameObject);
@@ -85,7 +85,7 @@ public class HankoMove : MonoBehaviour
                 else
                 {
                     this.transform.position = new Vector3(H.x - 1, H.y, H.z);
-                    if (this.transform.position == HankoSpawnPos.transform.position)
+                    if (this.transform.position.x <= HankoSpawnPos.transform.position.x)
                     {
                         HankoMove Hankoscr = HankoSpawnPos.GetComponent<HankoMove>();
                         Hankoscr.NewHanko(MoveR, this.gameObject);

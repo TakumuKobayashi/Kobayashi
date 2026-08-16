@@ -45,7 +45,10 @@ public class Startmanager : MonoBehaviour
 
     public void ButtonIn(int Num)
     {
-        buttonUI[Num].transform.localScale = InScaleUI[Num];
+        var a= buttonUI[Num].transform.localScale;
+        a.x *= 1.1f;
+        a.y *= 1.1f;
+        buttonUI[Num].transform.localScale = a;
         SoundManager.SoundM.Kasolsound();
     }
     public void ButtonOut(int Num)
