@@ -2317,12 +2317,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330165936}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 261.02756, y: 28.241165, z: -1.388851}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 380527616}
+  m_Father: {fileID: 1237618472}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &337383314
 GameObject:
@@ -2393,7 +2393,6 @@ Transform:
   - {fileID: 436402340}
   - {fileID: 1106635654}
   - {fileID: 1237618472}
-  - {fileID: 330165938}
   - {fileID: 270183317}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2842,6 +2841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GM: {fileID: 703624455}
   SM: {fileID: 436402339}
+  PM: {fileID: 0}
   TimeUI: {fileID: 0}
   ZangyouTimeUI: {fileID: 0}
   BonusUI: {fileID: 1592343340}
@@ -3956,11 +3956,28 @@ MonoBehaviour:
   TimerRed: 0
   NokoriHankoCount: 0
   NextHankoPoint: 0
+  BonusPaperCount: 0
   Syorui:
-  - Paper: {fileID: 3469005794617832710, guid: 3cb6954a93af11147885360323314b98, type: 3}
+  - Paper: {fileID: 1020466168832367476, guid: d313ebd9d6318b24e94f32c8be8b18c4, type: 3}
     HankoPoint: 2
-  - Paper: {fileID: 1289336139671497547, guid: 52e9bff2d206a724388e55a82a203866, type: 3}
+  - Paper: {fileID: 6960610272360540307, guid: 483020bafae7e154fab31843952fe7d7, type: 3}
     HankoPoint: 2
+  - Paper: {fileID: 3646473786236049350, guid: a90b82b77725ad94ba61c72bcafac6fa, type: 3}
+    HankoPoint: 2
+  - Paper: {fileID: 7923286633392645585, guid: 225de3860abf1d24289cb63ee12cb7e8, type: 3}
+    HankoPoint: 2
+  - Paper: {fileID: 7309225395933248854, guid: 2d84bed384cca8243906edcdbe5a0f51, type: 3}
+    HankoPoint: 2
+  - Paper: {fileID: 290449087837157835, guid: 9cb699fdde25aae40a064fe934cef4b5, type: 3}
+    HankoPoint: 2
+  - Paper: {fileID: 3969932989097053657, guid: 8014837a4aa801743b22da8cefb869d6, type: 3}
+    HankoPoint: 1
+  - Paper: {fileID: 3315392158695901342, guid: 3502be85a3868344d83c348493d8aefe, type: 3}
+    HankoPoint: 1
+  - Paper: {fileID: 309317020513524039, guid: a0cf3108b4f90c84aa589bd8445a5597, type: 3}
+    HankoPoint: 6
+  - Paper: {fileID: 2916080822627394917, guid: 08cc14ed98dfc644faaf1104b6629004, type: 3}
+    HankoPoint: 7
   BonusSyorui: {fileID: 5344688229376266643, guid: ef79a8fe0cb840d4796b6089e2b0c17f, type: 3}
   Resultpaper: {fileID: 3080013302393628115}
   NextPaper: {fileID: 0}
@@ -5393,6 +5410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GM: {fileID: 703624455}
   SM: {fileID: 436402339}
+  PM: {fileID: 330165937}
   TimeUI: {fileID: 236043215}
   ZangyouTimeUI: {fileID: 2006390527}
   BonusUI: {fileID: 1592343340}
@@ -6365,7 +6383,7 @@ MonoBehaviour:
   - {fileID: 1248374784}
   - {fileID: 1110452460}
   - {fileID: 1588002714}
-  HyoukaCount: 10270000204e000050c30000f8240100a0860100400d030020a10700
+  HyoukaCount: 0000000010270000204e000050c30000f8240100a0860100400d0300
   HyoukaImage:
   - {fileID: 21300000, guid: 33df95d5f99c7d548bf064e91152d82b, type: 3}
   - {fileID: 21300000, guid: 82b6d318955570747ade6d8b4c483974, type: 3}
@@ -6644,6 +6662,7 @@ MonoBehaviour:
   Hyouki01: {fileID: 9173514826532448356, guid: f5cfcd8e545b7314cb39a3a4db0ca76d, type: 3}
   Hyouki02: {fileID: 7521683211582548002, guid: 669c386353d4b2e49abc2bd292fa7117, type: 3}
   Hyouki03: {fileID: 303349936727425116, guid: 4710c8c44331cc04d86d6a6ca9e25d51, type: 3}
+  MissSizeCount: 0
   hantei:
   - {fileID: 4799618668543402395, guid: f973926cfcb4c354590feba1c015678a, type: 3}
   - {fileID: -7556016082631641370, guid: 224fc066458495e409d6c77e11b1ca5d, type: 3}
@@ -7366,6 +7385,7 @@ Transform:
   - {fileID: 1867430535}
   - {fileID: 620348704}
   - {fileID: 392730258}
+  - {fileID: 330165938}
   m_Father: {fileID: 380527616}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1237618475
@@ -7885,7 +7905,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.6288404, y: 2.6288404, z: 2.6288404}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1376278700}
   m_Father: {fileID: 1004052814}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -8204,6 +8225,95 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373787396}
+  m_CullTransparentMesh: 1
+--- !u!1 &1376278699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1376278700}
+  - component: {fileID: 1376278703}
+  - component: {fileID: 1376278702}
+  - component: {fileID: 1376278701}
+  m_Layer: 5
+  m_Name: Clock NidleUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1376278700
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376278699}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2649706, y: 0.65207607, z: 0.2649706}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1344568938}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.2999, y: -1}
+  m_SizeDelta: {x: 99.9994, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1376278701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376278699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd99c0e909e1874aa10b62d1acabd93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActiveClock: 0
+--- !u!114 &1376278702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376278699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 65a3b3a9440818443b916a260d0c43ba, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1376278703
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376278699}
   m_CullTransparentMesh: 1
 --- !u!1 &1410570292
 GameObject:

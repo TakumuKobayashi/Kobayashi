@@ -33,6 +33,11 @@ public class StartMouseSistem : MonoBehaviour
     void Start()
     {
         HandObj = Instantiate(Hand, MousePos);
+        var handScale = HandObj.transform.localScale;
+        handScale.x = 1.47f;
+        handScale.y = 1.47f;
+        handScale.z = 1.47f;
+        HandObj.transform.localScale = handScale;
         Handanim han = HandObj.GetComponent<Handanim>();
         Handpos = han.HandPos;
         HankoPos = han.HankoPos;
@@ -113,6 +118,11 @@ public class StartMouseSistem : MonoBehaviour
                     StartCoroutine(HandMove());
                     GameObject spawnedUI = Instantiate(Hanko, NowPaper);
                     spawnedUI.transform.position = Mousepos;
+                var sca = spawnedUI.transform.localScale;
+                sca.x = 0.2206296f;
+                sca.y = 0.2206296f;
+                sca.z = 0.2206296f;
+                spawnedUI.transform.localScale = sca;
                     SoundManager.SoundM.Hankosound(); 
 
             }

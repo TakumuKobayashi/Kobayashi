@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [Header("残り押さなければいけない数")]
     public int NokoriHankoCount;   // 現在の書類にあと何回ハンコを押す必要があるか
     public int NextHankoPoint;     // 次に出現する書類の必要ハンコ数
+    public int BonusPaperCount;
     
     [Header("ゲーム中に出現する書類情報")]
     public PaperInfo[] Syorui;     // ゲームに登場する書類の種類（インスペクターで設定）
@@ -132,11 +133,13 @@ public class GameManager : MonoBehaviour
         {
             yield return null;
         }
+        ClockMove.CM.ActiveClock = true;
         NowPaper.SetActive(true);
         StartCoroutine(PaperMove());
         SoundManager.SoundM.GameBGMsound();
         TimerActive = true;
         PM.ActiveESC = true;
+        BonusPaperCount = Random.Range(5, 9);
 
        // 次の書類を裏で先読み生成しておく
               PaperSpwan();
@@ -146,16 +149,30 @@ public class GameManager : MonoBehaviour
     public void PaperSpwan()
     {
         // ランダムに書類を選ぶ
-        var syoruiNum = Random.Range(0, Syorui.Length);
+        var R = Random.Range(0, 100);
+        var syoruiNum = 0;
+        Debug.Log(R);
+        if (R > 70) 
+        {
+             syoruiNum = Random.Range(0, 8);
+        }
+        else
+        {
+             syoruiNum = Random.Range(0, 10);
+        }
+
+        
         GameObject spawnedPaper = null;
         
-        if ((SM.PaperCount+1) % 10 == 0 && SM.PaperCount > 0 && !ZangyouManager.ZM.ActiveZangyou)
+        if (BonusPaperCount == 0 && SM.PaperCount > 0 && !ZangyouManager.ZM.ActiveZangyou)
         {
              spawnedPaper =  Instantiate(BonusSyorui,BackSpawn.transform);
             BonusPaper BP = spawnedPaper.GetComponent<BonusPaper>();
             BP.GM = MS.GM;
             NextHankoPoint = 777;
             SM.RendaCount = 0;
+            BonusPaperCount--;
+
         }
         else
         {
@@ -164,7 +181,7 @@ public class GameManager : MonoBehaviour
             // 次の書類の必要ハンコ数をキープしておく
             NextHankoPoint = Syorui[syoruiNum].HankoPoint;
             SoundManager.SoundM.BlueActivesound();
-
+            BonusPaperCount--;
         }
         
 
@@ -263,9 +280,10 @@ public class GameManager : MonoBehaviour
         MS.NowPaper = NowPaper.transform;  // マウスシステムへ新しい書類を通知
 
         SM.PaperCount++; // 処理した書類の数をカウントアップ
-        if ((SM.PaperCount) % 10 == 0 && SM.PaperCount > 0)
+        if (BonusPaperCount == -1 && SM.PaperCount > 0)
         {
             BonusActive = true;
+            BonusPaperCount = Random.Range(5, 9);
         }
         // さらにその次の書類を裏で新しく生成
         PaperSpwan();
@@ -319,6 +337,7 @@ public class GameManager : MonoBehaviour
     {
         AntiStanpUI.SetActive(true);
         PM.ActiveESC = false;
+        ClockMove.CM.ActiveClock = false;
         if (BonusTimer > 0)
         {
             TeijiUI.SetActive(true);

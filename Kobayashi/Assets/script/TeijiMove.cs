@@ -7,6 +7,7 @@ public class TeijiMove : MonoBehaviour
 {
     public GameManager GM;
     public ScoreManager SM;
+    public PauseManager PM;
 
     public TextMeshProUGUI TimeUI;
     public TextMeshProUGUI ZangyouTimeUI;
@@ -86,7 +87,8 @@ public class TeijiMove : MonoBehaviour
         GM.ActiveEnd = 3;
         GM.TimerActive = true;
         GM.TimerRed = false;
-        PauseManager.PM.ActiveESC = true;
+        PM.ActiveESC = true;
+        ClockMove.CM.ActiveClock = true;
 
         Destroy(GM.NextPaper.gameObject);
         Destroy(GM.NextKakusi.gameObject);

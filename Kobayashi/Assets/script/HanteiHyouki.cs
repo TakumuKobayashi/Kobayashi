@@ -8,6 +8,7 @@ public class HanteiHyouki : MonoBehaviour
     public GameObject Hyouki02;
     public GameObject Hyouki03;
 
+    public int MissSizeCount;          // 連続ミスした回数
     public Sprite[] hantei;
     public GameObject HyoukiPast;
 
@@ -20,6 +21,7 @@ public class HanteiHyouki : MonoBehaviour
             {
                 Destroy(HyoukiPast);
             }
+            MissSizeCount = 0;
 
             GameObject per =  Instantiate(Hyouki01, gameObject.transform);
 
@@ -35,6 +37,8 @@ public class HanteiHyouki : MonoBehaviour
             {
                 Destroy(HyoukiPast);
             }
+
+            MissSizeCount = 0;
 
             GameObject per = Instantiate(Hyouki02, gameObject.transform);
 
@@ -52,6 +56,11 @@ public class HanteiHyouki : MonoBehaviour
 
            GameObject har = Instantiate(Hyouki03, gameObject.transform);
             HyoukiPast = har;
+            MissSizeCount++;
+            var size = HyoukiPast.transform.localScale;
+            size.x *=  MissSizeCount;
+            size.y *=  MissSizeCount;
+            HyoukiPast.transform.localScale = size;
         }
     }
 

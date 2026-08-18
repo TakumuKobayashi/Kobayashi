@@ -108,10 +108,18 @@ public class SettingManager : MonoBehaviour
         if (MS != null)
         {
             MS.Sen += Value;
+            if(MS.Sen >= 10)
+            {
+                MS.Sen = 10;
+            }
         }
         else
         {
             SMS.Sen += Value;
+            if (SMS.Sen >= 10)
+            {
+                SMS.Sen = 10;
+            }
         }
         MouseSlider.value += Value;
         SoundManager.SoundM.Kasolsound();
@@ -130,10 +138,18 @@ public class SettingManager : MonoBehaviour
         if (MS != null)
         {
             MS.Sen -= Value;
+            if (MS.Sen < 0)
+            {
+                MS.Sen = 0;
+            }
         }
         else
         {
             SMS.Sen -= Value;
+            if (SMS.Sen < 0)
+            {
+                SMS.Sen = 0;
+            }
         }
         MouseSlider.value -= Value;
         SoundManager.SoundM.Kasolsound();

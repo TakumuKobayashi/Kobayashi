@@ -43,6 +43,16 @@ public class Startmanager : MonoBehaviour
 
     //主にボタンの中に入る関数たち
 
+    void Awake()
+    {
+        // ターゲットフレームレートを350FPSに固定
+        Application.targetFrameRate = 350;
+
+        // （補足）V-Sync（垂直同期）を無効化しないとtargetFrameRateが効かない場合があります
+        QualitySettings.vSyncCount = 0;
+
+    }
+
     public void ButtonIn(int Num)
     {
         var a= buttonUI[Num].transform.localScale;
@@ -228,7 +238,7 @@ public class Startmanager : MonoBehaviour
         {
             ActiveScoreState = 1;
             ScoreButtonUI.color = Color.white;
-            ScoreTextUI[0].text = $"{PlayerPrefs.GetFloat("TotalScoreR")}";
+            ScoreTextUI[0].text = $"{PlayerPrefs.GetFloat("TotalScoreR")}pt";
             ScoreTextUI[1].text = $"{PlayerPrefs.GetFloat("ScoreR")}";
             ScoreTextUI[2].text = $"{PlayerPrefs.GetFloat("ConboR")}";
             ScoreTextUI[3].text = $"{PlayerPrefs.GetFloat("PaperR")}";
@@ -240,7 +250,7 @@ public class Startmanager : MonoBehaviour
             ScoreTextUI[8].text = $"{PlayerPrefs.GetFloat("BadR")}";
             ScoreTextUI[9].text = $"{PlayerPrefs.GetFloat("MissR")}";
 
-            for (int i = 6; i >= 0; i--)
+            for (int i = 6; i >= -1; i--)
             {
                 //Debug.Log("トータル："+TotalScore+"基準 : "+HyoukaCount[i]);
                 if (High >= HyoukaCount[i])

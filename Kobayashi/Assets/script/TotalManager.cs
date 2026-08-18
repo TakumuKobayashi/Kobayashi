@@ -239,7 +239,7 @@ public class TotalManager : MonoBehaviour
 
         // --- 評価決定 ---
         // 高いランクから順にチェックして一致したものをセット
-        for (int i = 6; i >= 0; i--)
+        for (int i = 6; i >= -1; i--)
         {
             //Debug.Log("トータル："+TotalScore+"基準 : "+HyoukaCount[i]);
             if (TotalScore >= HyoukaCount[i])

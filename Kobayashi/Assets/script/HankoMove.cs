@@ -18,7 +18,7 @@ public class HankoMove : MonoBehaviour
         if(!Hanko)
         {
                 var Pos= transform.position;
-            for (int i = 1;i<=12; i++)
+            for (int i = 1;i<=15; i++)
             {
                 
                 if (MoveR)
@@ -49,14 +49,14 @@ public class HankoMove : MonoBehaviour
         if (T)
         {
             GameObject A = Instantiate(HankoMoveR, this.transform);
-            A.transform.position = new Vector3(Pos.x - distance * 12, Pos.y, Pos.z);
+            A.transform.position = new Vector3(Pos.x - distance * 15, Pos.y, Pos.z);
             HankoMove K = A.GetComponent<HankoMove>();
             K.HankoSpawnPos = HankoSpawnPos;
         }
         else
         {
             GameObject A = Instantiate(HankoMoveL, this.transform);
-            A.transform.position = new Vector3(Pos.x + distance * 12, Pos.y, Pos.z);
+            A.transform.position = new Vector3(Pos.x + distance * 15, Pos.y, Pos.z);
             HankoMove K = A.GetComponent<HankoMove>();
             K.HankoSpawnPos = HankoSpawnPos;
         }
