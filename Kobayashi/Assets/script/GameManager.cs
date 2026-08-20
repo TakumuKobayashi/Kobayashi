@@ -199,6 +199,7 @@ public class GameManager : MonoBehaviour
         BonusUI.SetActive(false);
         BonusText.text = $"+ {BonusTimer:F1}s";
         SoundManager.SoundM.Hakusyusound();
+        SoundManager.SoundM.Hanteisound(0);
         BonusUI.SetActive(true);
     }
 

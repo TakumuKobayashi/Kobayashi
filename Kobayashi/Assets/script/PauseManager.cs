@@ -15,6 +15,7 @@ public class PauseManager : MonoBehaviour
     public string[] Setumei;
 
     public HanteiHyouki KasolPos;
+    public RainboTurn RT;
     public static PauseManager PM;
 
     public bool ActiveESC;
@@ -73,6 +74,7 @@ public class PauseManager : MonoBehaviour
                 }
                 PauseUI.SetActive(true);
                 ActivePause = true;
+                RT.stopR = true;
                 Time.timeScale = 0;
             }
             else
@@ -87,6 +89,7 @@ public class PauseManager : MonoBehaviour
 
                 PauseUI.SetActive(false);
                 ActivePause = false;
+                RT.stopR = false;
                 Time.timeScale = 1;
             }
 
